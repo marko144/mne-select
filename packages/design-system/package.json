@@ -1,0 +1,15 @@
+{
+  "name": "@mne-select/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./tailwind.config.ts",
+  "types": "./tailwind.config.ts",
+  "exports": {
+    "./tailwind.config": "./tailwind.config.ts",
+    "./tokens": "./tokens/index.ts"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}

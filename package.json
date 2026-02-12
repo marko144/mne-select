@@ -1,0 +1,28 @@
+{
+  "name": "mne-select",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MNE Select - Portal and Guests web applications with Supabase backend",
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:portal": "turbo dev --filter=portal",
+    "dev:guests": "turbo dev --filter=guests",
+    "build": "turbo build",
+    "build:portal": "turbo build --filter=portal",
+    "build:guests": "turbo build --filter=guests",
+    "lint": "turbo lint",
+    "clean": "turbo clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "type-check": "turbo type-check"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
