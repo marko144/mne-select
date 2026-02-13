@@ -13,7 +13,7 @@ max_rows = 1000
 [db]
 port = 54322
 shadow_port = 54320
-major_version = 15
+major_version = 17
 
 [db.pooler]
 enabled = false
@@ -52,3 +52,47 @@ enable_signup = true
 enable_signup = true
 double_confirm_changes = true
 enable_confirmations = true
+
+[functions.create-business]
+enabled = true
+verify_jwt = true
+import_map = "./functions/create-business/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/create-business/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/create-business/*.html" ]
+
+[functions.send-invitation]
+enabled = true
+verify_jwt = true
+import_map = "./functions/send-invitation/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/send-invitation/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/send-invitation/*.html" ]
+
+[functions.accept-invitation]
+enabled = true
+verify_jwt = true
+import_map = "./functions/accept-invitation/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/accept-invitation/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/accept-invitation/*.html" ]
+
+[functions.list-business-invitations]
+enabled = true
+verify_jwt = true
+import_map = "./functions/list-business-invitations/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/list-business-invitations/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/list-business-invitations/*.html" ]

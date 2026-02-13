@@ -1,3 +1,37 @@
+# Phase 1: Seed Data & Initial Setup
+
+## Overview
+
+This document specifies the seed data and initialization scripts required to bootstrap the MNE Select platform with essential data and the initial platform administrator.
+
+---
+
+## Seed Data Requirements
+
+### 1. Initial Platform Administrator
+- **Email**: `marko+admin@velocci.me`
+- **Password**: `Password1*`
+- **Role**: Platform Admin
+- **Status**: Active
+- **Created**: During initial setup
+
+### 2. Business Types
+Pre-populate all supported business categories for the platform.
+
+### 3. Sample Test Data (Local Development Only)
+- Sample businesses
+- Sample business users
+- Sample invitations (for testing email flow)
+
+---
+
+## Seed Script Structure
+
+Create seed scripts in `supabase/seed.sql` for automatic seeding during local development.
+
+### File: `supabase/seed.sql`
+
+```sql
 -- ============================================================================
 -- MNE Select Platform - Seed Data
 -- ============================================================================
@@ -505,3 +539,303 @@ COMMIT;
 -- SELECT 'Businesses' as table_name, COUNT(*) as count FROM businesses WHERE deleted_at IS NULL;
 -- SELECT 'Business Users' as table_name, COUNT(*) as count FROM business_users WHERE deleted_at IS NULL;
 -- SELECT 'Invitations' as table_name, COUNT(*) as count FROM invitations;
+```
+
+---
+
+## Production Setup Script
+
+For production deployment, create a separate minimal seed script that only includes essential data.
+
+### File: `supabase/seed-production.sql`
+
+```sql
+-- ============================================================================
+-- MNE Select Platform - Production Seed Data
+-- ============================================================================
+-- PRODUCTION ONLY: Minimal seed data for production deployment
+-- This script should be run ONCE after initial deployment
+-- ============================================================================
+
+BEGIN;
+
+-- ============================================================================
+-- 1. BUSINESS TYPES
+-- ============================================================================
+
+INSERT INTO business_types (id, name, slug, description, icon_name, display_order, is_active)
+VALUES
+  (gen_random_uuid(), 'Restaurant', 'restaurant', 'Dining establishments offering full meal service', 'utensils', 1, true),
+  (gen_random_uuid(), 'Bar', 'bar', 'Establishments primarily serving alcoholic beverages', 'cocktail', 2, true),
+  (gen_random_uuid(), 'Coffee Shop', 'coffee-shop', 'Cafes and coffee houses', 'coffee', 3, true),
+  (gen_random_uuid(), 'Gym', 'gym', 'Fitness centers and health clubs', 'dumbbell', 4, true),
+  (gen_random_uuid(), 'Spa', 'spa', 'Wellness and beauty treatment centers', 'spa', 5, true),
+  (gen_random_uuid(), 'Boat Tour', 'boat-tour', 'Boat excursions and water tours', 'ship', 6, true),
+  (gen_random_uuid(), 'Experience', 'experience', 'Unique activities and adventure experiences', 'compass', 7, true),
+  (gen_random_uuid(), 'Guide', 'guide', 'Tour guides and local expertise services', 'map', 8, true),
+  (gen_random_uuid(), 'Car Rental', 'car-rental', 'Vehicle rental services', 'car', 9, true),
+  (gen_random_uuid(), 'Transfer', 'transfer', 'Airport and transportation transfer services', 'bus', 10, true),
+  (gen_random_uuid(), 'Beach', 'beach', 'Beach clubs and waterfront facilities', 'umbrella-beach', 11, true),
+  (gen_random_uuid(), 'Camp Site', 'camp-site', 'Camping grounds and outdoor accommodation', 'campground', 12, true)
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- 2. PLATFORM ADMINISTRATOR
+-- ============================================================================
+-- NOTE: In production, create the initial platform admin via Supabase Dashboard
+-- or Auth API, then run this SQL to create the platform_admins record
+
+-- This is a PLACEHOLDER - replace with actual user_id after creating via Auth API
+DO $$
+DECLARE
+  admin_user_id UUID;
+  admin_email TEXT := 'marko+admin@velocci.me';
+BEGIN
+  -- Get user_id from auth.users (must be created via Supabase Auth first)
+  SELECT id INTO admin_user_id
+  FROM auth.users
+  WHERE email = admin_email;
+
+  IF admin_user_id IS NULL THEN
+    RAISE EXCEPTION 'Platform admin user not found in auth.users. Please create via Supabase Dashboard first.';
+  END IF;
+
+  -- Create platform_admins record
+  INSERT INTO platform_admins (
+    user_id,
+    first_name,
+    last_name,
+    email,
+    is_active,
+    created_at,
+    updated_at
+  ) VALUES (
+    admin_user_id,
+    'Marko',
+    'Admin',
+    admin_email,
+    true,
+    NOW(),
+    NOW()
+  )
+  ON CONFLICT (user_id) DO NOTHING;
+
+  RAISE NOTICE 'Platform admin record created successfully';
+END $$;
+
+COMMIT;
+```
+
+---
+
+## Deployment Instructions
+
+### Local Development Setup
+
+```bash
+# 1. Start Supabase locally
+supabase start
+
+# 2. Seed data is automatically applied from supabase/seed.sql
+
+# 3. Verify seeding
+supabase db diff
+
+# 4. Check platform admin was created
+supabase db psql -c "SELECT * FROM platform_admins;"
+```
+
+### Production Deployment
+
+```bash
+# 1. Deploy schema migrations first
+supabase db push --db-url $PRODUCTION_DB_URL
+
+# 2. Create platform admin via Supabase Dashboard
+# - Navigate to Authentication > Users > Add User
+# - Email: marko+admin@velocci.me
+# - Password: Password1*
+# - Confirm email: Yes
+# - User metadata: {"role": "platform_admin"}
+
+# 3. Run production seed script
+supabase db psql --db-url $PRODUCTION_DB_URL -f seed-production.sql
+
+# 4. Verify
+supabase db psql --db-url $PRODUCTION_DB_URL -c "
+  SELECT 
+    pa.email, 
+    pa.is_active, 
+    au.email_confirmed_at
+  FROM platform_admins pa
+  JOIN auth.users au ON pa.user_id = au.id;
+"
+```
+
+---
+
+## Environment-Specific Considerations
+
+### Local Development
+- ✅ Include test businesses
+- ✅ Include test users
+- ✅ Include sample invitations
+- ✅ Auto-create platform admin
+
+### Staging
+- ✅ Include business types
+- ✅ Create platform admin via API
+- ❌ No test businesses
+- ❌ No test users
+
+### Production
+- ✅ Include business types only
+- ✅ Create platform admin via Dashboard (manual, secure)
+- ❌ No test data whatsoever
+
+---
+
+## Seed Data Validation
+
+### Validation Queries
+
+Run these after seeding to verify data integrity:
+
+```sql
+-- Check business types
+SELECT 
+  name, 
+  slug, 
+  is_active, 
+  display_order
+FROM business_types
+ORDER BY display_order;
+
+-- Verify platform admin exists and is properly linked
+SELECT 
+  pa.email,
+  pa.first_name,
+  pa.last_name,
+  pa.is_active,
+  au.email_confirmed_at,
+  au.created_at
+FROM platform_admins pa
+JOIN auth.users au ON pa.user_id = au.id
+WHERE pa.deleted_at IS NULL;
+
+-- Count records (development only)
+SELECT 
+  'businesses' as table_name, 
+  COUNT(*) as count 
+FROM businesses 
+WHERE deleted_at IS NULL
+
+UNION ALL
+
+SELECT 
+  'business_users', 
+  COUNT(*) 
+FROM business_users 
+WHERE deleted_at IS NULL
+
+UNION ALL
+
+SELECT 
+  'invitations', 
+  COUNT(*) 
+FROM invitations;
+```
+
+---
+
+## Troubleshooting
+
+### Issue: Platform admin cannot log in
+
+**Cause**: User record exists but `platform_admins` record missing
+
+**Solution**:
+```sql
+-- Create missing platform_admins record
+INSERT INTO platform_admins (user_id, first_name, last_name, email, is_active)
+SELECT 
+  id,
+  'Marko',
+  'Admin',
+  email,
+  true
+FROM auth.users
+WHERE email = 'marko+admin@velocci.me'
+ON CONFLICT (user_id) DO NOTHING;
+```
+
+### Issue: Test businesses not visible
+
+**Cause**: RLS policies blocking access
+
+**Solution**:
+```sql
+-- Check if user is recognized as platform admin
+SELECT is_platform_admin(); -- Should return true when logged in as admin
+
+-- Verify RLS is enabled
+SELECT schemaname, tablename, rowsecurity
+FROM pg_tables
+WHERE schemaname = 'public'
+  AND rowsecurity = true;
+```
+
+### Issue: Seed script fails on repeated runs
+
+**Cause**: Unique constraint violations
+
+**Solution**: Seed script uses `ON CONFLICT` clauses for idempotency. If still failing:
+```bash
+# Reset local database completely
+supabase db reset
+
+# Re-run migrations and seed
+supabase db push
+```
+
+---
+
+## Cleanup Scripts
+
+### Remove All Test Data (Development Only)
+
+```sql
+-- WARNING: This removes all test data. Use carefully!
+
+BEGIN;
+
+-- Remove test invitations
+DELETE FROM invitations 
+WHERE business_id IN (
+  SELECT id FROM businesses WHERE name LIKE '%Test%' OR name LIKE '%Sample%'
+);
+
+-- Remove test business users
+DELETE FROM business_users
+WHERE business_id IN (
+  SELECT id FROM businesses WHERE name LIKE '%Test%' OR name LIKE '%Sample%'
+);
+
+-- Remove test businesses
+DELETE FROM businesses
+WHERE name LIKE '%Test%' OR name LIKE '%Sample%';
+
+-- Remove test addresses
+DELETE FROM addresses
+WHERE city = 'Test City';
+
+COMMIT;
+```
+
+---
+
+## References
+
+- [Supabase Seeding Documentation](https://supabase.com/docs/guides/database/seed)
+- [PostgreSQL INSERT ON CONFLICT](https://www.postgresql.org/docs/current/sql-insert.html#SQL-ON-CONFLICT)
+- [Supabase Auth API](https://supabase.com/docs/reference/javascript/auth-signup)
