@@ -1,15 +1,34 @@
-import { Button } from '@mne-select/ui'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { HeroSection } from '../components/sections/HeroSection'
+import { ExperienceGridSection } from '../components/sections/ExperienceGridSection'
+import { AboutSection } from '../components/sections/AboutSection'
+import { SocialProofSection } from '../components/sections/SocialProofSection'
+import { FinalCTASection } from '../components/sections/FinalCTASection'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to MNE Select</h1>
-        <p className="text-xl text-gray-600 mb-8">
-          Discover amazing experiences in Montenegro
-        </p>
-        <Button>Explore</Button>
-      </div>
-    </main>
+    <>
+      <Header />
+
+      <main id="main-content" className="bg-navy">
+        {/* Hero Section - Full viewport height with email capture */}
+        <HeroSection />
+
+        {/* Experience Grid - Horizontal scrolling category tiles */}
+        <ExperienceGridSection />
+
+        {/* About Section - What is Montenegro Select */}
+        <AboutSection />
+
+        {/* Social Proof - Location launch info */}
+        <SocialProofSection />
+
+        {/* Final CTA - Last conversion opportunity */}
+        <FinalCTASection />
+      </main>
+
+      <Footer />
+    </>
   )
 }

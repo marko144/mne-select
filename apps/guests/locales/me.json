@@ -1,0 +1,62 @@
+{
+  "header": {
+    "logoAlt": "Montenegro Select",
+    "languageToggle": {
+      "en": "EN",
+      "me": "ME"
+    }
+  },
+  "hero": {
+    "headline": {
+      "line1": "Vaše kurirano",
+      "line2": "CRNA GORA",
+      "line3": "iskustvo"
+    },
+    "subheadline": "Privatne jahte. Skriveni beach clubovi. Izuzetna kulinarska iskustva. Kurirana mreža za turiste i ekspate koji traže više.",
+    "emailPlaceholder": "Unesite vašu e-adresu",
+    "cta": "Zatražite raniji pristup",
+    "microcopy": "Rani članovi dobijaju prioritetan pristup."
+  },
+  "categories": {
+    "sectionTitle": "Otkrijte svoje iskustvo",
+    "yachts": "Jahte",
+    "beachClubs": "Beach Clubovi",
+    "fineDining": "Fina Kuhinja",
+    "privateTours": "Privatne Ture",
+    "mountainEscapes": "Planinski Izleti",
+    "culturalEvenings": "Kulturne Večeri",
+    "ariaLabel": "Pogledajte {category} iskustva"
+  },
+  "about": {
+    "headline": "Nije tržište. ",
+    "headlineEmphasized": "Mreža",
+    "headlineSuffix": ".",
+    "bullets": [
+      "Lično odabrani partneri",
+      "Verifikovani standardi kvaliteta",
+      "Ekskluzivne pogodnosti za članove",
+      "Dizajnirano za rafinirano putovanje"
+    ]
+  },
+  "social": {
+    "primary": "Uskoro u Kotoru, Budvi i Porto Montenegru",
+    "secondary": "U saradnji sa odabranim partnerima širom Jadranske obale."
+  },
+  "finalCta": {
+    "headline": "Članstvo se uskoro otvara",
+    "subtext": "Pridružite se osnivačkom krugu."
+  },
+  "footer": {
+    "privacyPolicy": "Politika privatnosti",
+    "termsOfService": "Uslovi korišćenja",
+    "contact": "hello@montenegroselect.com",
+    "copyright": "© 2026 Montenegro Select"
+  },
+  "form": {
+    "errors": {
+      "required": "E-adresa je obavezna",
+      "invalid": "Molimo unesite ispravnu e-adresu"
+    },
+    "success": "Hvala! Uskoro ćemo vas kontaktirati."
+  }
+}

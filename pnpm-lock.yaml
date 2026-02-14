@@ -154,6 +154,13 @@ importers:
         version: 5.9.3
 
   packages/design-system:
+    dependencies:
+      '@fontsource-variable/cormorant-garamond':
+        specifier: ^5.2.6
+        version: 5.2.6
+      '@fontsource-variable/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
     devDependencies:
       tailwindcss:
         specifier: ^3.4.17
@@ -308,6 +315,14 @@ packages:
       '@eslint/core': 0.17.0
       levn: 0.4.1
     dev: true
+
+  /@fontsource-variable/cormorant-garamond@5.2.6:
+    resolution: {integrity: sha512-5vHPJWMuTbVoB6OnorCflWJ51NJZ7eQWw58tVFUE/hHphTi/z2vrKESbuMSJ3diOC5KgPm/RLv2ULur+N1NLJQ==}
+    dev: false
+
+  /@fontsource-variable/inter@5.2.8:
+    resolution: {integrity: sha512-kOfP2D+ykbcX/P3IFnokOhVRNoTozo5/JxhAIVYLpea/UBmCQ/YWPBfWIDuBImXX/15KH+eKh4xpEUyS2sQQGQ==}
+    dev: false
 
   /@humanfs/core@0.19.1:
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}

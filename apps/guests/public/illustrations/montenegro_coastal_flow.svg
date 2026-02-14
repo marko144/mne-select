@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400">
+  <!-- Montenegro Adriatic Coastline - Simplified flowing line (West to East) -->
+  <!-- This path flows naturally along the coast and animates like hand-drawing -->
+  
+  <g id="coastal-flow">
+    <!-- Main Adriatic coastline - flows west to east -->
+    <path
+      d="M 50,200
+         C 80,195 110,193 140,195
+         L 170,198 C 200,202 230,205 260,205
+         L 290,204 C 320,202 350,198 380,195
+         
+         C 400,193 420,192 440,193
+         L 460,195 C 475,197 490,200 505,202
+         L 520,203
+         
+         C 530,203 540,202 550,200
+         L 565,197 C 580,193 595,190 610,188
+         L 625,187
+         
+         C 640,187 655,189 670,192
+         L 690,197 C 705,201 720,204 735,206
+         L 750,207
+         
+         C 760,207 770,206 780,204
+         L 795,200 C 808,196 820,193 832,191
+         L 845,190
+         
+         C 857,190 869,192 881,195
+         L 900,200 C 915,204 930,207 945,208
+         L 965,208 C 975,207 985,205 995,203"
+      stroke="#c2a24d"
+      stroke-width="4"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    
+    <!-- Bay of Kotor - curves inward (major landmark) -->
+    <path
+      d="M 420,195
+         C 422,210 423,225 422,240
+         L 420,255 C 417,270 412,285 405,298
+         L 395,315 C 387,328 377,340 365,350
+         L 350,362 C 338,370 325,375 312,378
+         L 295,380 C 282,380 270,378 258,373
+         L 242,365 C 232,358 224,350 218,340
+         L 210,325 C 206,312 204,298 205,284
+         L 207,268 C 210,255 215,243 222,232
+         L 232,218 C 242,207 254,198 267,192
+         L 285,185 C 298,182 312,181 325,183
+         L 342,187 C 355,191 367,197 378,204
+         L 392,214 C 402,222 410,231 416,241
+         L 420,252"
+      stroke="#c2a24d"
+      stroke-width="3"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    
+    <!-- Coastal detail variations (small bays and inlets) -->
+    <path
+      d="M 250,205 Q 252,215 253,225 T 252,235 Q 250,240 248,243 T 246,248 Q 245,250 246,252 T 248,256 Q 250,259 252,261 T 255,264 Q 257,265 258,265"
+      stroke="#c2a24d"
+      stroke-width="2.5"
+      fill="none"
+      stroke-linecap="round"
+    />
+    
+    <path
+      d="M 650,170 Q 652,178 653,186 T 652,194 Q 650,198 648,200 T 646,203 Q 645,204 646,206 T 648,209 Q 650,211 652,212"
+      stroke="#c2a24d"
+      stroke-width="2.5"
+      fill="none"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+{
+  "header": {
+    "logoAlt": "Montenegro Select",
+    "languageToggle": {
+      "en": "EN",
+      "me": "ME"
+    }
+  },
+  "hero": {
+    "headline": {
+      "line1": "Your curated",
+      "line2": "MONTENEGRO",
+      "line3": "Experience"
+    },
+    "subheadline": "Private yachts. Hidden beach clubs. Exceptional dining. A curated network for tourists and expats seeking more.",
+    "emailPlaceholder": "Enter your email",
+    "cta": "Request Early Access",
+    "microcopy": "Early members receive priority access."
+  },
+  "categories": {
+    "sectionTitle": "Discover Your Experience",
+    "yachts": "Yachts",
+    "beachClubs": "Beach Clubs",
+    "fineDining": "Fine Dining",
+    "privateTours": "Private Tours",
+    "mountainEscapes": "Mountain Escapes",
+    "culturalEvenings": "Cultural Evenings",
+    "ariaLabel": "View {category} experiences"
+  },
+  "about": {
+    "headline": "Not A Marketplace. A",
+    "headlineEmphasized": "Network",
+    "headlineSuffix": ".",
+    "bullets": [
+      "Personally selected partners",
+      "Verified quality standards",
+      "Exclusive benefits for members",
+      "Designed for refined travel"
+    ]
+  },
+  "social": {
+    "primary": "Launching Soon in Kotor, Budva & Porto Montenegro",
+    "secondary": "In collaboration with select partners across the Adriatic coast."
+  },
+  "finalCta": {
+    "headline": "Membership Opens Soon",
+    "subtext": "Join the founding circle."
+  },
+  "footer": {
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "hello@montenegroselect.com",
+    "copyright": "© 2026 Montenegro Select"
+  },
+  "form": {
+    "errors": {
+      "required": "Email is required",
+      "invalid": "Please enter a valid email"
+    },
+    "success": "Thank you! We'll be in touch soon."
+  }
+}

@@ -1,0 +1,76 @@
+/**
+ * Montenegro Select Font Definitions
+ * Using @fontsource packages for Inter and Cormorant Garamond
+ * Supports both Latin and Cyrillic (Montenegrin) characters
+ */
+
+/* Import Inter - Body & UI Text */
+@import '@fontsource-variable/inter/wght.css';
+@import '@fontsource-variable/inter/wght-italic.css';
+
+/* Import Cormorant Garamond - Headlines & Display Text */
+@import '@fontsource-variable/cormorant-garamond/wght.css';
+@import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+
+/* Font Face Declarations with font-display: swap for performance */
+:root {
+  /* Inter - Body Font */
+  --font-body:
+    'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Cormorant Garamond - Display Font */
+  --font-display:
+    'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia,
+    'Times New Roman', serif;
+
+  /* Futura fallback - Brand Font (falls back to Inter) */
+  --font-brand:
+    Futura, 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Fallback font metrics matching for reduced layout shift */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Cormorant Fallback';
+  src: local('Georgia');
+  size-adjust: 100%;
+  ascent-override: 85%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+}
+
+/* Base Typography Styles */
+body {
+  font-family: var(--font-body);
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1,
+    'kern' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display text uses Cormorant Garamond */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Brand moments use Futura (with Inter fallback) */
+.font-brand {
+  font-family: var(--font-brand);
+}
+
+/* Cyrillic support - both fonts include Cyrillic glyphs by default */
+/* No additional @font-face rules needed with @fontsource-variable packages */
