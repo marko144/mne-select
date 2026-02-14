@@ -40,7 +40,7 @@ export function Header() {
           ${
             isScrolled
               ? 'h-16 glass shadow-lg'
-              : 'h-20 bg-navy/80'
+              : 'h-20 bg-transparent'
           }
         `}
       >
@@ -49,7 +49,7 @@ export function Header() {
           <div className="flex-shrink-0">
             <Logo
               variant="gold"
-              size={isScrolled ? 'sm' : 'md'}
+              size="xl"
               className="transition-all duration-base"
             />
           </div>

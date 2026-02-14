@@ -8,9 +8,10 @@
   },
   "hero": {
     "headline": {
-      "line1": "Your curated",
+      "line1": "Your Curated",
       "line2": "MONTENEGRO",
-      "line3": "Experience"
+      "line3": "experience that rewards you",
+      "full": "Your curated Montenegro experience that rewards you"
     },
     "subheadline": "Private yachts. Hidden beach clubs. Exceptional dining. A curated network for tourists and expats seeking more.",
     "emailPlaceholder": "Enter your email",

@@ -4,7 +4,11 @@ import React, { useState, FormEvent } from 'react'
 import { Button, Input } from '@mne-select/ui'
 import { useLanguage } from '../contexts/LanguageContext'
 
-export function EmailCaptureForm() {
+interface EmailCaptureFormProps {
+  align?: 'center' | 'left'
+}
+
+export function EmailCaptureForm({ align = 'center' }: EmailCaptureFormProps) {
   const { t } = useLanguage()
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
@@ -63,7 +67,7 @@ export function EmailCaptureForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md mx-auto"
+      className={`w-full max-w-md ${align === 'left' ? 'lg:mx-0 lg:max-w-full lg:mr-auto' : 'mx-auto'}`}
       noValidate
     >
       <div className="flex flex-col md:flex-row gap-3">
@@ -93,7 +97,7 @@ export function EmailCaptureForm() {
       </div>
 
       {/* Microcopy */}
-      <p className="mt-4 text-sm text-cream-subtle text-center">
+      <p className={`mt-4 text-sm text-cream-subtle ${align === 'left' ? 'lg:text-left' : 'text-center'}`}>
         {t('hero.microcopy')}
       </p>
     </form>

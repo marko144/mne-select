@@ -121,6 +121,40 @@
   --color-gold: #c2a24d;
   --color-navy: #0f2a44;
   --color-cream: #e8e6e1;
+
+  /* Hero gradient presets - switch via data-gradient on hero section */
+  --hero-bg-gradient-a: linear-gradient(
+    135deg,
+    #0f2a44 0%,
+    #0c2238 40%,
+    #071728 70%,
+    #030914 100%
+  );
+  --hero-bg-gradient-b: linear-gradient(
+    180deg,
+    #0a1f35 0%,
+    #0f2a44 30%,
+    #0c2238 60%,
+    #071728 100%
+  );
+  --hero-bg-gradient-c: linear-gradient(
+    160deg,
+    #0f2a44 0%,
+    #0d2640 25%,
+    #0a2238 50%,
+    #071728 100%
+  );
+  --hero-bg-gradient-d: linear-gradient(
+    180deg,
+    #0f2a44 0%,
+    #071728 100%
+  );
+  --hero-bg-gradient-e: linear-gradient(
+    135deg,
+    #0f2a44 0%,
+    #0f2a44 50%,
+    #071728 100%
+  );
 }
 
 * {

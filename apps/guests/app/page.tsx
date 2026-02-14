@@ -1,6 +1,8 @@
+'use client'
+
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { HeroSection } from '../components/sections/HeroSection'
+import HeroSectionAnimated from '../components/sections/HeroSectionAnimated'
 import { ExperienceGridSection } from '../components/sections/ExperienceGridSection'
 import { AboutSection } from '../components/sections/AboutSection'
 import { SocialProofSection } from '../components/sections/SocialProofSection'
@@ -12,8 +14,7 @@ export default function Home() {
       <Header />
 
       <main id="main-content" className="bg-navy">
-        {/* Hero Section - Full viewport height with email capture */}
-        <HeroSection />
+        <HeroSectionAnimated />
 
         {/* Experience Grid - Horizontal scrolling category tiles */}
         <ExperienceGridSection />

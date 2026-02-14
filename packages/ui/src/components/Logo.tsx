@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface LogoProps {
   variant?: 'gold' | 'cream'
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   onClick?: () => void
 }
@@ -11,6 +11,7 @@ const sizeMap = {
   sm: 24,
   md: 32,
   lg: 40,
+  xl: 42, // ~30% larger than md
 }
 
 export function Logo({ variant = 'gold', size = 'md', className = '', onClick }: LogoProps) {
