@@ -16,9 +16,9 @@ const backgroundClasses = {
 
 const spacingClasses = {
   none: '',
-  sm: 'py-12 md:py-16 lg:py-20', // Smaller spacing
-  md: 'py-16 md:py-24 lg:py-32', // Default section spacing (64/96/128px)
-  lg: 'py-20 md:py-28 lg:py-40', // Larger spacing for emphasis
+  sm: 'py-8 md:py-10 lg:py-12', // Compact spacing
+  md: 'py-10 md:py-14 lg:py-20', // Default section spacing
+  lg: 'py-12 md:py-18 lg:py-24', // Larger spacing for emphasis
 }
 
 export function Section({

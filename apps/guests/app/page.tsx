@@ -3,10 +3,10 @@
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import HeroSectionAnimated from '../components/sections/HeroSectionAnimated'
+import { WhyJoinSection } from '../components/sections/WhyJoinSection'
 import { ExperienceGridSection } from '../components/sections/ExperienceGridSection'
 import { AboutSection } from '../components/sections/AboutSection'
-import { SocialProofSection } from '../components/sections/SocialProofSection'
-import { FinalCTASection } from '../components/sections/FinalCTASection'
+import { FAQSection } from '../components/sections/FAQSection'
 
 export default function Home() {
   return (
@@ -16,17 +16,17 @@ export default function Home() {
       <main id="main-content" className="bg-navy">
         <HeroSectionAnimated />
 
+        {/* Why Join Montenegro Select */}
+        <WhyJoinSection />
+
         {/* Experience Grid - Horizontal scrolling category tiles */}
         <ExperienceGridSection />
 
-        {/* About Section - What is Montenegro Select */}
+        {/* About Section - The Montenegro Select Standard */}
         <AboutSection />
 
-        {/* Social Proof - Location launch info */}
-        <SocialProofSection />
-
-        {/* Final CTA - Last conversion opportunity */}
-        <FinalCTASection />
+        {/* FAQ Section */}
+        <FAQSection />
       </main>
 
       <Footer />

@@ -20,3 +20,6 @@ export type { ContainerProps } from './components/Container'
 
 export { Section } from './components/Section'
 export type { SectionProps } from './components/Section'
+
+export { Accordion } from './components/Accordion'
+export type { AccordionProps, AccordionItemProps } from './components/Accordion'

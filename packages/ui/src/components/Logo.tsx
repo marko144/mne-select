@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface LogoProps {
   variant?: 'gold' | 'cream'
-  size?: 'sm' | 'md' | 'lg' | 'xl'
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
   className?: string
   onClick?: () => void
 }
@@ -11,7 +11,8 @@ const sizeMap = {
   sm: 24,
   md: 32,
   lg: 40,
-  xl: 42, // ~30% larger than md
+  xl: 42,
+  '2xl': 72, // 3x sm - for footer
 }
 
 export function Logo({ variant = 'gold', size = 'md', className = '', onClick }: LogoProps) {
@@ -44,7 +45,7 @@ export function Logo({ variant = 'gold', size = 'md', className = '', onClick }:
         alt="Montenegro Select"
         width={width}
         height={height}
-        className="transition-transform duration-base"
+        className="block transition-transform duration-base"
       />
     </button>
   )

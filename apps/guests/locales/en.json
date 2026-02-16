@@ -6,38 +6,93 @@
       "me": "ME"
     }
   },
+  "whyJoin": {
+    "sectionTitle": "Why join Montenegro Select",
+    "p1": "We connect you with carefully selected partners across Montenegro, making it easy to discover exceptional experiences and arrange them with confidence.",
+    "tagline": "Less time organising. More time enjoying."
+  },
   "hero": {
     "headline": {
       "line1": "Your Curated",
       "line2": "MONTENEGRO",
-      "line3": "experience that rewards you",
-      "full": "Your curated Montenegro experience that rewards you"
+      "line3": "experiences that reward you",
+      "full": "Your curated Montenegro experiences that reward you"
     },
-    "subheadline": "Private yachts. Hidden beach clubs. Exceptional dining. A curated network for tourists and expats seeking more.",
+    "subheadline": "Create your entire Montenegro experience with trusted providers, in one place",
     "emailPlaceholder": "Enter your email",
-    "cta": "Request Early Access",
-    "microcopy": "Early members receive priority access."
+    "cta": "Join Waitlist",
+    "microcopy": "Launching this season"
   },
   "categories": {
-    "sectionTitle": "Discover Your Experience",
-    "yachts": "Yachts",
-    "beachClubs": "Beach Clubs",
-    "fineDining": "Fine Dining",
-    "privateTours": "Private Tours",
-    "mountainEscapes": "Mountain Escapes",
-    "culturalEvenings": "Cultural Evenings",
+    "sectionTitle": "Everything you want, in one place, from our trusted partners",
+    "charterBoat": "Charter a boat",
+    "joinBoatTour": "Join a boat tour",
+    "experienceHiddenGems": "Find hidden gems",
+    "tasteLocalWines": "Taste local wines",
+    "stayFit": "Stay fit",
+    "accessBeachClubs": "Access Beach Clubs",
+    "travelInSafeHands": "Travel in safe hands",
+    "tasteLocalFlavours": "Taste local flavours",
     "ariaLabel": "View {category} experiences"
   },
   "about": {
-    "headline": "Not A Marketplace. A",
-    "headlineEmphasized": "Network",
-    "headlineSuffix": ".",
-    "bullets": [
-      "Personally selected partners",
-      "Verified quality standards",
-      "Exclusive benefits for members",
-      "Designed for refined travel"
-    ]
+    "sectionTitle": "The Montenegro Select Standard",
+    "oneSeamless": {
+      "heading": "One Seamless Experience",
+      "p1": "Your time in Montenegro should feel effortless.",
+      "p2": "From boat experiences and wine tastings to beach clubs and private transfers, Montenegro Select brings everything together in one place.",
+      "p3": "Less coordination. More enjoyment."
+    },
+    "bookWithConfidence": {
+      "heading": "Book with Confidence",
+      "p1": "We work only with partners who meet our standards for quality, professionalism and reliability.",
+      "p2": "Bookings are confirmed directly, with clear terms and transparent pricing at every step.",
+      "p3": "No guesswork. No inflated promises."
+    },
+    "memberPrivileges": {
+      "heading": "Member Privileges",
+      "p1": "Members may receive exclusive benefits from selected partners to use while in Montenegro.",
+      "p2": "Priority access, thoughtful upgrades or discreet additions that enhance your experience.",
+      "p3": "Subtle, but meaningful."
+    },
+    "curatedGuides": {
+      "heading": "Complimentary Local Guides",
+      "p1": "Members receive access to our complimentary guides, designed to help you shape an experience that suits your pace.",
+      "p2": "Refined relaxation, cultural exploration or coastal adventure, with recommendations you can trust.",
+      "p3": "Exceptional experiences are rarely accidental."
+    }
+  },
+  "faq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "launch": {
+      "question": "When does Montenegro Select launch?",
+      "answer": "We are currently preparing our partner network and will open access in phases. Join the waiting list to be notified first."
+    },
+    "cost": {
+      "question": "Is there a cost to join?",
+      "answer": "Joining the waiting list is free. Details about membership and access will be shared ahead of launch."
+    },
+    "experiences": {
+      "question": "What kinds of experiences will be available?",
+      "answer": "Montenegro Select will include carefully chosen experiences such as boat trips, wine tastings, dining, beach clubs, transfers and more across Montenegro."
+    },
+    "partners": {
+      "question": "How are partners selected?",
+      "answer": "Each partner is reviewed against our standards for quality, professionalism and reliability before being included."
+    },
+    "benefits": {
+      "question": "Will members receive special benefits?",
+      "answer": "Some partners may extend added benefits to Montenegro Select members, where available."
+    },
+    "travelAgency": {
+      "question": "Is Montenegro Select a travel agency?",
+      "answer1": "No. Montenegro Select connects visitors with carefully selected independent partners across Montenegro.",
+      "answer2": "Experiences are provided directly by the chosen partner. Montenegro Select facilitates the connection and booking but does not act as a travel agency."
+    },
+    "commit": {
+      "question": "Do I need to commit to anything by joining the waitlist?",
+      "answer": "No. Joining simply ensures you receive updates and early access when we launch."
+    }
   },
   "social": {
     "primary": "Launching Soon in Kotor, Budva & Porto Montenegro",
@@ -51,7 +106,7 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "contact": "hello@montenegroselect.com",
-    "copyright": "© 2026 Montenegro Select"
+    "copyright": "© 2026 Velocci D.O.O"
   },
   "form": {
     "errors": {

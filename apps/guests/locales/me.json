@@ -6,6 +6,11 @@
       "me": "ME"
     }
   },
+  "whyJoin": {
+    "sectionTitle": "Zašto se pridružiti Montenegro Select",
+    "p1": "Povezujemo vas s pažljivo odabranim partnerima širom Crne Gore, olakšavajući otkrivanje izuzetnih iskustava i njihovo organizovanje sa sigurnošću.",
+    "tagline": "Manje organizovanja. Više uživanja."
+  },
   "hero": {
     "headline": {
       "line1": "Ručno odabrana iskustva",
@@ -13,31 +18,81 @@
       "line3": "koja vas nagrađuju",
       "full": "Ručno odabrana iskustva Crne Gore koja vas nagrađuju"
     },
-    "subheadline": "Privatne jahte. Skriveni beach clubovi. Izuzetna kulinarska iskustva. Kurirana mreža za turiste i ekspate koji traže više.",
+    "subheadline": "Stvorite cijelo iskustvo Crne Gore s pouzdanim pružateljima usluga, na jednom mjestu",
     "emailPlaceholder": "Unesite vašu e-adresu",
-    "cta": "Zatražite raniji pristup",
-    "microcopy": "Rani članovi dobijaju prioritetan pristup."
+    "cta": "Pridružite se listi čekanja",
+    "microcopy": "Spremamo se za novu sezonu"
   },
   "categories": {
-    "sectionTitle": "Otkrijte svoje iskustvo",
-    "yachts": "Jahte",
-    "beachClubs": "Beach Clubovi",
-    "fineDining": "Fina Kuhinja",
-    "privateTours": "Privatne Ture",
-    "mountainEscapes": "Planinski Izleti",
-    "culturalEvenings": "Kulturne Večeri",
+    "sectionTitle": "Sve što želite, na jednom mjestu, od naših pouzdanih partnera",
+    "charterBoat": "Zaplovite privatnim gliserom",
+    "joinBoatTour": "Krenite na premium izlet brodom",
+    "experienceHiddenGems": "Pronađite skrivene dragulje",
+    "tasteLocalWines": "Uživajte u lokalnim vinima",
+    "stayFit": "Ostanite u formi",
+    "accessBeachClubs": "Družite se u Beach Klubu",
+    "travelInSafeHands": "Putujte sigurno, sa stilom",
+    "tasteLocalFlavours": "Upoznajte lokalne ukuse",
     "ariaLabel": "Pogledajte {category} iskustva"
   },
   "about": {
-    "headline": "Nije tržište. ",
-    "headlineEmphasized": "Mreža",
-    "headlineSuffix": ".",
-    "bullets": [
-      "Lično odabrani partneri",
-      "Verifikovani standardi kvaliteta",
-      "Ekskluzivne pogodnosti za članove",
-      "Dizajnirano za rafinirano putovanje"
-    ]
+    "sectionTitle": "Montenegro Select Standard",
+    "oneSeamless": {
+      "heading": "Iskustvo bez napora",
+      "p1": "Vaše vrijeme u Crnoj Gori treba da protiče lagano.",
+      "p2": "Od izleta brodom i degustacija vina do beach klubova i privatnih transfera, Montenegro Select povezuje pažljivo odabrana iskustva na jednom mjestu.",
+      "p3": "Manje planiranja. Više uživanja."
+    },
+    "bookWithConfidence": {
+      "heading": "Sigurnost pri svakoj rezervaciji",
+      "p1": "Sarađujemo isključivo sa partnerima koji ispunjavaju naše standarde kvaliteta, profesionalizma i pouzdanosti.",
+      "p2": "Svaka rezervacija potvrđuje se jasno i transparentno, uz unaprijed definisane uslove i cijene.",
+      "p3": "Bez nagađanja. Bez preuveličanih obećanja."
+    },
+    "memberPrivileges": {
+      "heading": "Posebne pogodnosti za članove",
+      "p1": "Članovi mogu ostvariti dodatne pogodnosti kod odabranih partnera za korišćenje tokom boravka u Crnoj Gori.",
+      "p2": "To mogu biti prioritetni pristup, posebne cijene ili pažljivo osmišljeni detalji koji upotpunjuju iskustvo.",
+      "p3": "Diskretno, ali vrijedno."
+    },
+    "curatedGuides": {
+      "heading": "Komplementarni lokalni vodiči",
+      "p1": "Članovi dobijaju pristup našim komplementarnim vodičima, osmišljenim da vam pomognu da oblikujete boravak prema sopstvenom ritmu.",
+      "p2": "Bilo da birate opuštanje uz more, kulturno istraživanje ili aktivan odmor, preporuke su pažljivo pripremljene.",
+      "p3": "Jer izuzetna iskustva rijetko nastaju slučajno."
+    }
+  },
+  "faq": {
+    "sectionTitle": "Često postavljana pitanja",
+    "launch": {
+      "question": "Kada Montenegro Select počinje sa radom?",
+      "answer": "Trenutno pripremamo mrežu partnera i pristup će se otvarati postepeno. Prijavite se na listu čekanja kako biste među prvima dobili obavještenje."
+    },
+    "cost": {
+      "question": "Da li se plaća pristup?",
+      "answer": "Prijava na listu čekanja je besplatna. Detalji o članstvu i pristupu biće podijeljeni prije zvaničnog pokretanja."
+    },
+    "experiences": {
+      "question": "Koje vrste iskustava će biti dostupne?",
+      "answer": "Montenegro Select će obuhvatiti pažljivo odabrana iskustva poput izleta brodom, degustacija vina, restorana, beach klubova, transfera i drugih sadržaja širom Crne Gore."
+    },
+    "partners": {
+      "question": "Kako birate partnere?",
+      "answer": "Svaki partner se procjenjuje prema našim standardima kvaliteta, profesionalizma i pouzdanosti prije nego što bude uključen u mrežu."
+    },
+    "benefits": {
+      "question": "Da li članovi dobijaju posebne pogodnosti?",
+      "answer": "Odabrani partneri mogu ponuditi dodatne pogodnosti članovima Montenegro Selecta, gdje je to dostupno."
+    },
+    "travelAgency": {
+      "question": "Da li je Montenegro Select turistička agencija?",
+      "answer1": "Ne. Montenegro Select povezuje posjetioce sa pažljivo odabranim, nezavisnim partnerima širom Crne Gore.",
+      "answer2": "Uslugu pruža direktno izabrani partner. Montenegro Select omogućava povezivanje i rezervaciju, ali ne djeluje kao turistička agencija."
+    },
+    "commit": {
+      "question": "Da li se prijavom na listu čekanja na nešto obavezujem?",
+      "answer": "Ne. Prijavom jednostavno dobijate obavještenja i rani pristup kada Montenegro Select bude pokrenut."
+    }
   },
   "social": {
     "primary": "Uskoro u Kotoru, Budvi i Porto Montenegru",
@@ -51,7 +106,7 @@
     "privacyPolicy": "Politika privatnosti",
     "termsOfService": "Uslovi korišćenja",
     "contact": "hello@montenegroselect.com",
-    "copyright": "© 2026 Montenegro Select"
+    "copyright": "© 2026 Velocci D.O.O"
   },
   "form": {
     "errors": {

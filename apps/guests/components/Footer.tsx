@@ -14,31 +14,34 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-navy-darker">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
-        {/* Content Container */}
-        <div className="flex flex-col items-center text-center space-y-8">
-          {/* Logo */}
-          <Logo variant="cream" size="sm" />
+    <footer className="relative flex-shrink-0 bg-navy-darker">
+      {/* Gradient blend - minimal on mobile to reduce perceived gap */}
+      <div
+        className="pointer-events-none absolute bottom-full left-0 right-0 h-2 md:h-16 lg:h-24"
+        style={{
+          background: 'linear-gradient(to bottom, #0f2a44 0%, #071728 100%)',
+        }}
+        aria-hidden
+      />
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-3 md:py-5">
+        <div className="flex flex-col items-center justify-center gap-1 md:gap-4 text-center">
+          <Logo variant="cream" size="xl" className="p-0 md:hidden" />
+          <Logo variant="cream" size="2xl" className="p-0 hidden md:block" />
 
-          {/* Links */}
           <nav
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-1"
+            className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-x-2 sm:gap-y-0"
             aria-label="Footer navigation"
           >
             {links.map((link, index) => (
               <React.Fragment key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-cream-muted hover:text-cream underline-gold transition-colors duration-base focus:outline-none focus:ring-3 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-darker rounded px-2 py-1"
+                  className="text-sm text-cream-muted hover:text-cream underline-gold transition-colors duration-base focus:outline-none focus:ring-3 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-darker rounded px-2 py-0.5"
                 >
                   {link.label}
                 </a>
                 {index < links.length - 1 && (
-                  <span
-                    className="hidden sm:inline text-cream-subtle mx-2"
-                    aria-hidden="true"
-                  >
+                  <span className="hidden sm:inline text-cream-subtle" aria-hidden="true">
                     •
                   </span>
                 )}
@@ -46,8 +49,7 @@ export function Footer() {
             ))}
           </nav>
 
-          {/* Copyright */}
-          <p className="text-xs text-cream-subtle">
+          <p className="text-xs text-cream-subtle leading-tight">
             {t('footer.copyright')}
           </p>
         </div>

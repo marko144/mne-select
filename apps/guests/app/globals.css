@@ -144,11 +144,7 @@
     #0a2238 50%,
     #071728 100%
   );
-  --hero-bg-gradient-d: linear-gradient(
-    180deg,
-    #0f2a44 0%,
-    #071728 100%
-  );
+  --hero-bg-gradient-d: linear-gradient(180deg, #0f2a44 0%, #071728 100%);
   --hero-bg-gradient-e: linear-gradient(
     135deg,
     #0f2a44 0%,
@@ -187,6 +183,12 @@ body {
 /* ============================================
    UTILITY CLASSES
    ============================================ */
+
+/* Carousel scroll - prevent image drag from hijacking scroll */
+.carousel-scroll img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 
 /* Hide scrollbar utility */
 .hide-scrollbar {
@@ -284,7 +286,8 @@ body {
 
 /* Pulse after drawing completes */
 .svg-pulse-after-draw {
-  animation: svg-draw 2.5s ease-out forwards,
+  animation:
+    svg-draw 2.5s ease-out forwards,
     svg-pulse 3s ease-in-out 2.5s infinite;
 }
 
