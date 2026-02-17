@@ -1,0 +1,16 @@
+# Montenegro Select - Guests App
+# Allow all crawlers to index public content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://montenegroselect.me/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Block specific paths if needed (examples)
+# Disallow: /api/
+# Disallow: /admin/
+# Disallow: /_next/static/

@@ -405,6 +405,21 @@ function BusinessCard({ business }) {
 3. **SEO issues**: Verify metadata, check robots.txt
 4. **Build errors**: Ensure shared packages build first
 
+## SEO & Analytics Documentation
+
+### SEO Implementation
+- **[SEO Quick Start](./SEO_QUICK_START.md)** - Get SEO set up in 30 minutes
+- **[SEO Setup Guide](./SEO_SETUP_GUIDE.md)** - Complete SEO implementation guide
+- **[SEO Implementation Summary](./SEO_IMPLEMENTATION_SUMMARY.md)** - Overview of what's implemented
+
+### Google Analytics
+- **[Google Analytics Guide](./GOOGLE_ANALYTICS_GUIDE.md)** - Complete GA4 tracking guide
+
+### Other Documentation
+- **[Notion Waitlist Setup](./NOTION_WAITLIST_SETUP.md)** - Waitlist integration guide
+- **[Landing Page Spec](./montenegro_select_landing_page_spec.md)** - Design specifications
+- **[UI Reviews](./landing_page_UI_review_1.md)** - Design feedback and improvements
+
 ## Further Reading
 
 - [Next.js App Router](https://nextjs.org/docs/app)

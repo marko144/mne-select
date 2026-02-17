@@ -1,0 +1,7 @@
+# Montenegro Select - Portal App
+# Block all crawlers - this is a protected partner portal
+
+User-agent: *
+Disallow: /
+
+# No sitemap for portal app (login-protected content)

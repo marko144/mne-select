@@ -3,6 +3,7 @@
 import React, { useState, FormEvent } from 'react'
 import { Button, Input } from '@mne-select/ui'
 import { useLanguage } from '../contexts/LanguageContext'
+import { trackWaitlistSignup } from '../lib/analytics'
 
 interface EmailCaptureFormProps {
   align?: 'center' | 'left'
@@ -35,14 +36,30 @@ export function EmailCaptureForm({ align = 'center' }: EmailCaptureFormProps) {
       return
     }
 
-    // Simulate loading state (no backend yet)
     setIsLoading(true)
 
-    // Log to console for now
-    console.log('Email submitted:', email)
+    try {
+      // Call API route to submit to Notion
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
 
-    // Simulate API call
-    setTimeout(() => {
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to join waitlist')
+      }
+
+      console.log('✅ Email submitted successfully:', email)
+
+      // Track successful waitlist signup
+      trackWaitlistSignup('hero_form')
+
+      // Success!
       setIsLoading(false)
       setIsSuccess(true)
       setEmail('')
@@ -51,7 +68,11 @@ export function EmailCaptureForm({ align = 'center' }: EmailCaptureFormProps) {
       setTimeout(() => {
         setIsSuccess(false)
       }, 5000)
-    }, 1000)
+    } catch (error: any) {
+      console.error('❌ Error submitting email:', error)
+      setIsLoading(false)
+      setError(error.message || 'Something went wrong. Please try again.')
+    }
   }
 
   if (isSuccess) {
