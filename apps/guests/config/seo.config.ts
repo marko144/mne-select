@@ -6,9 +6,9 @@
 export const siteConfig = {
   // Base Configuration
   name: 'Montenegro Select',
-  title: 'Montenegro Select - Curated Luxury Experiences in Montenegro',
+  title: 'Montenegro Select - Curated Experiences in Montenegro',
   description:
-    'Discover handpicked luxury experiences across Montenegro. Private boat charters, wine tastings, transfers, car rentals, and exclusive recommendations from trusted local partners.',
+    'Discover handpicked experiences across Montenegro. Private boat charters, wine tastings, transfers, car rentals, and exclusive recommendations from trusted local partners.',
   url: 'https://montenegroselect.me',
   stagingUrl: 'https://staging.montenegroselect.me',
   
@@ -94,7 +94,7 @@ export const siteConfig = {
   keywords: [
     'Montenegro Select',
     'curated Montenegro experiences',
-    'luxury Montenegro travel',
+    'Montenegro travel',
     'private boat charter Kotor',
     'Montenegro travel concierge',
     'exclusive Montenegro tours',
@@ -103,7 +103,7 @@ export const siteConfig = {
     'Montenegro wine tasting',
     'private transfers Montenegro',
     'Kotor Bay boat tours',
-    'luxury travel Montenegro',
+    'Montenegro travel experiences',
     'Montenegro local experiences',
   ],
   
@@ -124,7 +124,7 @@ export const siteConfig = {
         url: '/images/og-image.jpg', // You'll need to create this
         width: 1200,
         height: 630,
-        alt: 'Montenegro Select - Curated Luxury Experiences',
+        alt: 'Montenegro Select - Curated Experiences',
       },
     ],
   },
@@ -141,11 +141,11 @@ export const siteConfig = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Montenegro Select',
-    legalName: 'Montenegro Select',
+    legalName: 'Velocci D.O.O',
     url: 'https://montenegroselect.me',
     logo: 'https://montenegroselect.me/logos/full_logo_gold.svg',
     description:
-      'Montenegro Select connects visitors with carefully selected independent partners across Montenegro for luxury travel experiences.',
+      'Montenegro Select connects visitors with carefully selected independent partners across Montenegro for exceptional travel experiences.',
     email: 'hello@montenegroselect.me',
     areaServed: {
       '@type': 'Country',

@@ -67,8 +67,8 @@ export function generateAlternateLinks(
  */
 export function getLocalizedMetaDescription(locale: string): string {
   const descriptions: Record<string, string> = {
-    en: 'Discover handpicked luxury experiences across Montenegro. Private boat charters, wine tastings, transfers, car rentals, and exclusive recommendations from trusted local partners.',
-    me: 'Otkrijte ručno odabrana luksuzna iskustva širom Crne Gore. Privatni čarter brodova, degustacije vina, transferi, iznajmljivanje automobila i ekskluzivne preporuke od pouzdanih lokalnih partnera.',
+    en: 'Discover handpicked experiences across Montenegro. Private boat charters, wine tastings, transfers, car rentals, and exclusive recommendations from trusted local partners.',
+    me: 'Otkrijte ručno odabrana iskustva širom Crne Gore. Privatni čarter brodova, degustacije vina, transferi, iznajmljivanje automobila i ekskluzivne preporuke od pouzdanih lokalnih partnera.',
   }
 
   return descriptions[locale] || descriptions.en
@@ -79,8 +79,8 @@ export function getLocalizedMetaDescription(locale: string): string {
  */
 export function getLocalizedTitle(locale: string): string {
   const titles: Record<string, string> = {
-    en: 'Montenegro Select - Curated Luxury Experiences in Montenegro',
-    me: 'Montenegro Select - Ručno odabrana luksuzna iskustva u Crnoj Gori',
+    en: 'Montenegro Select - Curated Experiences in Montenegro',
+    me: 'Montenegro Select - Ručno odabrana iskustva u Crnoj Gori',
   }
 
   return titles[locale] || titles.en
