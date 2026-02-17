@@ -1,4 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Metadata } from 'next'
+import Link from 'next/link'
 import { Container } from '@mne-select/ui'
 import { siteConfig } from '../../config/seo.config'
 
@@ -587,7 +589,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Back to Home */}
           <div className="mt-12 pt-8 border-t border-gold/20">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center text-gold hover:text-gold/80 transition-colors"
             >
@@ -600,7 +602,7 @@ export default function PrivacyPolicyPage() {
                 />
               </svg>
               Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </Container>
