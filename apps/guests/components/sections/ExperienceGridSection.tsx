@@ -6,7 +6,6 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { CategoryTile } from '../CategoryTile'
 
 const categories = [
-  'travelInSafeHands',
   'charterBoat',
   'joinBoatTour',
   'experienceHiddenGems',
@@ -14,6 +13,7 @@ const categories = [
   'stayFit',
   'accessBeachClubs',
   'tasteLocalFlavours',
+  'travelInSafeHands',
 ] as const
 
 /** Image paths for each category - optimized WebP */
@@ -219,8 +219,8 @@ export function ExperienceGridSection() {
           {t('categories.sectionTitle')}
         </h2>
 
-        {/* MOBILE: Vertical snap scroll cards */}
-        <div className="md:hidden flex flex-col gap-6 px-6">
+        {/* MOBILE: Vertical snap scroll cards - centered */}
+        <div className="md:hidden flex flex-col items-center gap-6 px-6">
           {categories.map((categoryKey) => (
             <div
               key={categoryKey}
