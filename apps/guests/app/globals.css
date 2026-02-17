@@ -200,6 +200,18 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
+/* Snap scrolling - smooth snap behavior for card scrolling */
+.snap-y-container {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 2rem;
+  scroll-padding-bottom: 2rem;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
 /* Focus visible styles for accessibility */
 *:focus-visible {
   outline: 3px solid #c2a24d; /* gold */

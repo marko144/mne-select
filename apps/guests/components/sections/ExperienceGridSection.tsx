@@ -219,9 +219,30 @@ export function ExperienceGridSection() {
           {t('categories.sectionTitle')}
         </h2>
 
-        {/* Horizontal Scroll Container - centered on desktop */}
+        {/* MOBILE: Vertical snap scroll cards */}
+        <div className="md:hidden flex flex-col gap-6 px-6">
+          {categories.map((categoryKey) => (
+            <div
+              key={categoryKey}
+              className="snap-start snap-always"
+              style={{ scrollSnapAlign: 'start' }}
+            >
+              <CategoryTile
+                category={t(`categories.${categoryKey}`)}
+                imageSrc={CATEGORY_IMAGES[categoryKey]}
+                imagePosition={CATEGORY_IMAGE_POSITIONS[categoryKey]}
+                onClick={() => {
+                  console.log(`Navigate to ${categoryKey}`)
+                  // TODO: Add navigation when category pages are built
+                }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* DESKTOP/TABLET: Horizontal scroll carousel */}
         <div
-          className="relative flex justify-center"
+          className="hidden md:block relative"
           role="region"
           aria-label="Experience categories"
         >
@@ -229,8 +250,8 @@ export function ExperienceGridSection() {
           <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
 
           {/* Carousel wrapper - same bounds as scroll area so arrows position correctly */}
-          <div className="relative w-full max-w-[1440px]">
-            {/* Scrollable Container - drag on desktop, swipe on mobile, no scrollbar */}
+          <div className="relative w-full max-w-[1440px] mx-auto">
+            {/* Scrollable Container - drag on desktop, swipe on tablet, no scrollbar */}
             <div
               ref={scrollRef}
               className={`carousel-scroll overflow-x-auto hide-scrollbar snap-x snap-proximity select-none w-full ${
