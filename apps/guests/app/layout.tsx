@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { LanguageProvider } from '../contexts/LanguageContext'
+import { ConsentWrapper } from '../components/ConsentWrapper'
+import { GoogleAnalyticsWrapper } from '../components/GoogleAnalyticsWrapper'
 import { siteConfig, generatePageMetadata } from '../config/seo.config'
 import './globals.css'
 
@@ -59,14 +60,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <LanguageProvider>{children}</LanguageProvider>
+        
+        {/* Cookie Consent Banner */}
+        <ConsentWrapper />
+        
+        {/* Google Analytics - Conditionally loaded based on consent */}
+        <GoogleAnalyticsWrapper />
       </body>
-      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   )
 }

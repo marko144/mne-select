@@ -23,3 +23,6 @@ export type { SectionProps } from './components/Section'
 
 export { Accordion } from './components/Accordion'
 export type { AccordionProps, AccordionItemProps } from './components/Accordion'
+
+export { CookieBanner } from './components/CookieBanner'
+export type { CookieBannerProps } from './components/CookieBanner'

@@ -197,7 +197,20 @@ importers:
         version: 5.9.3
 
   packages/shared-utils:
+    dependencies:
+      '@mne-select/shared-types':
+        specifier: workspace:*
+        version: link:../shared-types
     devDependencies:
+      '@types/node':
+        specifier: ^22.10.5
+        version: 22.19.11
+      '@types/react':
+        specifier: ^19.0.6
+        version: 19.2.14
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
@@ -3110,7 +3123,6 @@ packages:
   /react@19.2.4:
     resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}

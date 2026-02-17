@@ -40,3 +40,6 @@ export type {
   ListInvitationsResponse,
   InvitationListItem,
 } from './api.types';
+
+// Export cookie consent types
+export * from './cookies';

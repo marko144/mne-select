@@ -8,10 +8,29 @@ export function Footer() {
   const { t } = useLanguage()
 
   const links = [
-    { label: t('footer.privacyPolicy'), href: '#privacy' },
-    { label: t('footer.termsOfService'), href: '#terms' },
-    { label: t('footer.contact'), href: `mailto:${t('footer.contact')}` },
+    { 
+      label: t('footer.privacyPolicy'), 
+      href: '/privacy',
+      external: true 
+    },
+    { 
+      label: t('footer.termsOfService'), 
+      href: '#terms',
+      external: false 
+    },
+    { 
+      label: t('footer.contact'), 
+      href: `mailto:${t('footer.contact')}`,
+      external: false 
+    },
   ]
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof links[0]) => {
+    if (link.external && !link.href.startsWith('mailto:')) {
+      e.preventDefault()
+      window.open(link.href, '_blank', 'noopener,noreferrer')
+    }
+  }
 
   return (
     <footer className="relative flex-shrink-0 bg-navy-darker">
@@ -36,9 +55,15 @@ export function Footer() {
               <React.Fragment key={link.href}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleLinkClick(e, link)}
                   className="text-sm text-cream-muted hover:text-cream underline-gold transition-colors duration-base focus:outline-none focus:ring-3 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy-darker rounded px-2 py-0.5"
+                  target={link.external && !link.href.startsWith('mailto:') ? '_blank' : undefined}
+                  rel={link.external && !link.href.startsWith('mailto:') ? 'noopener noreferrer' : undefined}
                 >
                   {link.label}
+                  {link.external && !link.href.startsWith('mailto:') && (
+                    <span className="ml-1 text-xs" aria-label="Opens in new tab">↗</span>
+                  )}
                 </a>
                 {index < links.length - 1 && (
                   <span className="hidden sm:inline text-cream-subtle" aria-hidden="true">
