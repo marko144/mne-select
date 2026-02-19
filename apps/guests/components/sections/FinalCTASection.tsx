@@ -11,7 +11,7 @@ export function FinalCTASection() {
   return (
     <Section spacing="lg" id="final-cta">
       <Container maxWidth="narrow">
-        <div className="text-center space-y-8">
+        <div className="text-center space-y-6">
           {/* Headline */}
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gold tracking-tight">
             {t('finalCta.headline')}
@@ -23,8 +23,8 @@ export function FinalCTASection() {
           </p>
 
           {/* CTA Form */}
-          <div className="pt-4">
-            <EmailCaptureForm />
+          <div className="pt-2">
+            <EmailCaptureForm showMicrocopy={false} />
           </div>
         </div>
       </Container>
