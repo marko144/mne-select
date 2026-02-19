@@ -44,12 +44,15 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-semibold text-cream mb-4">1. Data Controller</h2>
               <p className="text-cream-muted leading-relaxed mb-4">
-                Montenegro Select, operated by <strong className="text-cream">Velocci D.O.O</strong>,
+                Montenegro Select, operated by <strong className="text-cream">Velocci UK LTD</strong>,
                 is the data controller responsible for your personal data.
               </p>
               <div className="bg-navy-darker p-6 rounded-lg border border-gold/20">
                 <p className="text-cream-muted mb-2">
-                  <span className="font-medium text-cream">Company:</span> Velocci D.O.O
+                  <span className="font-medium text-cream">Company:</span> Velocci UK LTD
+                </p>
+                <p className="text-cream-muted mb-2">
+                  <span className="font-medium text-cream">UK Company No.:</span> 16257088
                 </p>
                 <p className="text-cream-muted">
                   <span className="font-medium text-cream">Contact:</span>{' '}
@@ -558,7 +561,10 @@ export default function PrivacyPolicyPage() {
               <div className="bg-navy-darker p-6 rounded-lg border border-gold/20">
                 <div className="space-y-3">
                   <p className="text-cream-muted">
-                    <span className="font-medium text-cream">Company:</span> Velocci D.O.O
+                    <span className="font-medium text-cream">Company:</span> Velocci UK LTD
+                  </p>
+                  <p className="text-cream-muted">
+                    <span className="font-medium text-cream">UK Company No.:</span> 16257088
                   </p>
                   <p className="text-cream-muted">
                     <span className="font-medium text-cream">Privacy Contact:</span>{' '}

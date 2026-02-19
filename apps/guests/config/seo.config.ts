@@ -26,7 +26,7 @@ export const siteConfig = {
   // Business Information
   business: {
     type: 'TravelAgency', // Schema.org type (though you position as a connector, not agency)
-    legalName: 'MVelocci D.O.O',
+    legalName: 'Velocci UK LTD',
     foundingDate: '2026',
     slogan: 'Your curated Montenegro experiences that reward you',
     priceRange: '€€€',
@@ -141,7 +141,7 @@ export const siteConfig = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Montenegro Select',
-    legalName: 'Velocci D.O.O',
+    legalName: 'Velocci UK LTD',
     url: 'https://montenegroselect.me',
     logo: 'https://montenegroselect.me/logos/full_logo_gold.svg',
     description:
@@ -153,6 +153,11 @@ export const siteConfig = {
     },
     foundingDate: '2026',
     slogan: 'Your curated Montenegro experiences that reward you',
+    identifier: {
+      '@type': 'PropertyValue',
+      name: 'UK Company Number',
+      value: '16257088',
+    },
   },
   
   // Robots Configuration

@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useRef, useState, useCallback, useEffect } from 'react'
-import { Container, Section } from '@mne-select/ui'
+import { CarouselDots, Container, Section } from '@mne-select/ui'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { CategoryTile } from '../CategoryTile'
 
 const categories = [
+  'stayInStyle',
   'charterBoat',
   'joinBoatTour',
   'experienceHiddenGems',
@@ -23,6 +24,7 @@ const CATEGORY_IMAGES: Record<(typeof categories)[number], string> = {
   experienceHiddenGems: '/images/experiences/cards/find_hidden_gems.webp',
   tasteLocalWines: '/images/experiences/cards/taste_local_wines.webp',
   stayFit: '/images/experiences/cards/stay_fit.webp',
+  stayInStyle: '/images/experiences/cards/stays.webp',
   accessBeachClubs: '/images/experiences/cards/access_beach_clubs.webp',
   travelInSafeHands: '/images/experiences/cards/travel_safe_hands.webp',
   tasteLocalFlavours: '/images/experiences/cards/taste_local_flavours.webp',
@@ -191,12 +193,20 @@ export function ExperienceGridSection() {
 
   const [canScrollLeft, setCanScrollLeft] = useState(true)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const [dotActiveIndex, setDotActiveIndex] = useState(0)
+
+  const DOT_COUNT = 5
 
   const updateScrollState = useCallback(() => {
     const el = scrollRef.current
     if (!el) return
     setCanScrollLeft(el.scrollLeft > 0)
     setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 1)
+    const maxScroll = el.scrollWidth - el.clientWidth
+    if (maxScroll > 0) {
+      const progress = el.scrollLeft / maxScroll
+      setDotActiveIndex(Math.round(progress * (DOT_COUNT - 1)))
+    }
   }, [])
 
   useEffect(() => {
@@ -219,42 +229,17 @@ export function ExperienceGridSection() {
           {t('categories.sectionTitle')}
         </h2>
 
-        {/* MOBILE: Vertical snap scroll cards - centered */}
-        <div className="md:hidden flex flex-col items-center gap-6 px-6">
-          {categories.map((categoryKey) => (
-            <div
-              key={categoryKey}
-              className="snap-start snap-always"
-              style={{ scrollSnapAlign: 'start' }}
-            >
-              <CategoryTile
-                category={t(`categories.${categoryKey}`)}
-                imageSrc={CATEGORY_IMAGES[categoryKey]}
-                imagePosition={CATEGORY_IMAGE_POSITIONS[categoryKey]}
-                onClick={() => {
-                  console.log(`Navigate to ${categoryKey}`)
-                  // TODO: Add navigation when category pages are built
-                }}
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* DESKTOP/TABLET: Horizontal scroll carousel */}
-        <div
-          className="hidden md:block relative"
-          role="region"
-          aria-label="Experience categories"
-        >
+        {/* Horizontal scroll carousel - mobile & desktop */}
+        <div className="relative" role="region" aria-label="Experience categories">
           {/* Left Fade Gradient */}
-          <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-6 md:w-10 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
 
-          {/* Carousel wrapper - same bounds as scroll area so arrows position correctly */}
+          {/* Carousel wrapper */}
           <div className="relative w-full max-w-[1440px] mx-auto">
-            {/* Scrollable Container - drag on desktop, swipe on tablet, no scrollbar */}
+            {/* Scrollable Container - drag/swipe, no scrollbar */}
             <div
               ref={scrollRef}
-              className={`carousel-scroll overflow-x-auto hide-scrollbar snap-x snap-proximity select-none w-full ${
+              className={`carousel-scroll overflow-x-auto hide-scrollbar snap-x snap-mandatory select-none w-full ${
                 isDragging ? 'cursor-grabbing' : 'cursor-grab'
               }`}
               onMouseDown={handleMouseDown}
@@ -279,31 +264,36 @@ export function ExperienceGridSection() {
               </div>
             </div>
 
-            {/* Desktop: floating arrows - top right of carousel, subtle, gold, side by side */}
+            {/* Desktop: floating arrows - top right */}
             <div className="hidden lg:flex absolute top-4 right-4 z-20 gap-2">
-            <button
-              type="button"
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-              aria-label="Scroll carousel left"
-              className="group flex items-center justify-center w-10 h-10 rounded-full bg-navy/90 backdrop-blur-md border-2 border-gold/60 shadow-[0_2px_8px_rgba(0,0,0,0.4)] hover:border-gold hover:bg-navy transition-all duration-base focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gold/60"
-            >
-              <ChevronIcon direction="left" />
-            </button>
-            <button
-              type="button"
-              onClick={scrollRight}
-              disabled={!canScrollRight}
-              aria-label="Scroll carousel right"
-              className="group flex items-center justify-center w-10 h-10 rounded-full bg-navy/90 backdrop-blur-md border-2 border-gold/60 shadow-[0_2px_8px_rgba(0,0,0,0.4)] hover:border-gold hover:bg-navy transition-all duration-base focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gold/60"
-            >
-              <ChevronIcon direction="right" />
-            </button>
-          </div>
+              <button
+                type="button"
+                onClick={scrollLeft}
+                disabled={!canScrollLeft}
+                aria-label="Scroll carousel left"
+                className="group flex items-center justify-center w-10 h-10 rounded-full bg-navy/90 backdrop-blur-md border-2 border-gold/60 shadow-[0_2px_8px_rgba(0,0,0,0.4)] hover:border-gold hover:bg-navy transition-all duration-base focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gold/60"
+              >
+                <ChevronIcon direction="left" />
+              </button>
+              <button
+                type="button"
+                onClick={scrollRight}
+                disabled={!canScrollRight}
+                aria-label="Scroll carousel right"
+                className="group flex items-center justify-center w-10 h-10 rounded-full bg-navy/90 backdrop-blur-md border-2 border-gold/60 shadow-[0_2px_8px_rgba(0,0,0,0.4)] hover:border-gold hover:bg-navy transition-all duration-base focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-navy disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-gold/60"
+              >
+                <ChevronIcon direction="right" />
+              </button>
+            </div>
           </div>
 
           {/* Right Fade Gradient */}
-          <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-6 md:w-10 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
+
+          {/* Mobile: dot navigation - indicates horizontal scrollability */}
+          <div className="md:hidden">
+            <CarouselDots count={DOT_COUNT} activeIndex={dotActiveIndex} />
+          </div>
         </div>
       </Container>
     </Section>

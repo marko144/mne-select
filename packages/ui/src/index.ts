@@ -24,5 +24,8 @@ export type { SectionProps } from './components/Section'
 export { Accordion } from './components/Accordion'
 export type { AccordionProps, AccordionItemProps } from './components/Accordion'
 
+export { CarouselDots } from './components/CarouselDots'
+export type { CarouselDotsProps } from './components/CarouselDots'
+
 export { CookieBanner } from './components/CookieBanner'
 export type { CookieBannerProps } from './components/CookieBanner'
