@@ -7,6 +7,7 @@ import { PartnerHeroSection } from '../../components/sections/PartnerHeroSection
 import { BeSeenSection } from '../../components/sections/BeSeenSection'
 import { BookingsSection } from '../../components/sections/BookingsSection'
 import { OffersSection } from '../../components/sections/OffersSection'
+import { CommissionSection } from '../../components/sections/CommissionSection'
 import { PartnerApplyModal } from '../../components/PartnerApplyModal'
 
 export default function PartnerPage() {
@@ -28,6 +29,9 @@ export default function PartnerPage() {
 
         {/* ── Send Special Offers ──────────────────────────── */}
         <OffersSection />
+
+        {/* ── Grow Your Profit (Commission) ────────────────── */}
+        <CommissionSection />
 
         {/* ── Bottom CTA ───────────────────────────────────── */}
         <section
