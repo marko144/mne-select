@@ -400,7 +400,6 @@ export function BookingsSection() {
               style={{
                 fontSize: 'clamp(1rem, 1.3vw, 1.15rem)',
                 color: `${CREAM}99`,
-                maxWidth: '38ch',
               }}
             >
               {t('partner.bookings.subheadline')}

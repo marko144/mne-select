@@ -131,20 +131,23 @@
     },
     "becomePartner": "Postanite partner",
     "offers": {
-      "headline": "Šaljite posebne ponude našim članovima",
-      "subheadline": "Nagradite goste ekskluzivnim ponudama. Potaknite ponovne posjete i izgradite lojalnost s članovima koji traže najboljа iskustva."
+      "headline": "Otključajte potražnju u pravom trenutku",
+      "subheadline": "Direktno komunicirajte sa našim članovima kroz ciljane ponude za sporije periode, nove sadržaje ili posebne prilike. Bilo da je riječ o ograničenoj pogodnosti ili kratkoročnom paketu, zadržavate potpunu kontrolu nad uslovima, dok pristupate publici koja aktivno traži provjerene i kvalitetne usluge."
     },
     "bookings": {
-      "headline": "Više potvrđenih rezervacija s bezbjednim plaćanjem",
-      "subheadline": "Gosti rezervišu i plaćaju direktno putem naše platforme. Vi dobijate potvrđene rezervacije i pouzdan prihod — bez administracije."
+      "headline": "Sigurna plaćanja. Veća sigurnost poslovanja.",
+      "subheadline": "Klienti očekuju da svoju rezervaciju potvrde uplatom. Kada je rezervacija osigurana u trenutku potvrde, stvara se jasnoća i sigurnost za obje strane. Vi dobijate potvrđene rezervacije, manje otkazivanja i predvidljivije prihode."
     },
     "beSeen": {
-      "headline": "Budite vidljivi iznad ostalih",
-      "subheadline": "Dio naše mreže — i vaš biznis postaje primjetan. Povjerenje privlači goste i gradi dugoročan uspjeh."
+      "headline": "Budite odabrani. Ne samo svrstani.",
+      "subheadline": "Ulazak u Montenegro Select znači više od same prisutnosti — znači povjerenje. Naši članovi znaju da je svaki partner pažljivo biran prema jasno definisanim standardima kvaliteta i profesionalnosti. Ta selekcija vašem poslovanju daje snažniju i izdvojenu poziciju na konkurentnom tržištu."
     },
     "commission": {
-      "headline": "Povećajte svoju zaradu",
-      "subheadline": "Naše provizije su niže od onih koje naplaćuju globalne platforme."
+      "headline": "Pravedniji model za lokalne partnere",
+      "subheadline": "Smatramo da uspješna poslovanja treba da zadrže veću vrijednost svog rada. Zato je naša proviziona politika pažljivo oblikovana tako da bude povoljnija od globalnih platformi, gradeći dugoročno održiv i ravnopravan partnerski odnos.",
+      "otherPlatforms": "Ostale platforme",
+      "yourEarnings": "Vaša zarada",
+      "commission": "Provizija"
     }
   }
 }

@@ -131,20 +131,23 @@
     },
     "becomePartner": "Become a partner",
     "offers": {
-      "headline": "Send special offers to our members",
-      "subheadline": "Reward guests directly with exclusive deals. Drive repeat visits and build loyalty with members who are actively looking for the best experiences."
+      "headline": "Unlock Demand When It Matters",
+      "subheadline": "Reach our members directly with targeted offers designed for quieter hours, shoulder season, or new experiences. Whether it's a limited incentive or a short-term package, you remain in control while accessing an audience already inclined to book quality experiences."
     },
     "bookings": {
-      "headline": "More confirmed bookings with secure payment",
-      "subheadline": "Guests book and pay directly through our platform. You receive confirmed reservations and reliable income — without the admin."
+      "headline": "Secure Payments. Greater Certainty.",
+      "subheadline": "Your customers expect to confirm their reservation with payment. When a booking is secured at the time of reservation, it creates clarity on both sides. You receive confirmed bookings, fewer no-shows, and more predictable income."
     },
     "beSeen": {
-      "headline": "Be seen above the rest",
-      "subheadline": "Being part of our network will get you noticed in a crowded market. Being a trusted partner drives more customers to your business."
+      "headline": "Be Chosen. Not Just Listed.",
+      "subheadline": "Acceptance into Montenegro Select reflects more than visibility — it reflects trust. Our members know that every partner has been selected with care, creating a stronger position for your business in a competitive market."
     },
     "commission": {
-      "headline": "Grow your profit",
-      "subheadline": "Our commission rates are lower than those charged by global platforms."
+      "headline": "A Fairer Model for Local Partners",
+      "subheadline": "We believe strong businesses should keep more of their revenue. Our commission structure is intentionally lighter than global platforms, creating a more sustainable and equitable partnership.",
+      "otherPlatforms": "Other platforms",
+      "yourEarnings": "Your earnings",
+      "commission": "Commission"
     }
   }
 }
