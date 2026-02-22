@@ -282,7 +282,7 @@ export function BeSeenSection() {
 
           {/* ── Text column ──────────────────────────────────────── */}
           <div
-            className="lg:w-5/12 flex flex-col gap-6"
+            className="lg:w-1/2 flex flex-col gap-6"
             style={{
               opacity:   revealed ? 1 : 0,
               transform: revealed ? 'translateX(0)' : 'translateX(-32px)',
@@ -292,7 +292,7 @@ export function BeSeenSection() {
             <h2
               id="be-seen-heading"
               className="font-display font-medium text-cream leading-tight"
-              style={{ fontSize: 'clamp(2rem, 3.8vw, 3.25rem)' }}
+              style={{ fontSize: 'clamp(1.9rem, 2.4vw, 2.6rem)' }}
             >
               {t('partner.beSeen.headline')}
             </h2>
@@ -302,7 +302,6 @@ export function BeSeenSection() {
               style={{
                 fontSize: 'clamp(1rem, 1.3vw, 1.15rem)',
                 color: `${CREAM}99`,
-                maxWidth: '38ch',
               }}
             >
               {t('partner.beSeen.subheadline')}
@@ -311,7 +310,7 @@ export function BeSeenSection() {
 
           {/* ── Map column ───────────────────────────────────────── */}
           <div
-            className="lg:w-7/12"
+            className="lg:w-1/2"
             style={{
               position: 'relative',
               opacity:   revealed ? 1 : 0,

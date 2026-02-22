@@ -24,7 +24,7 @@ const PLATFORM_FEE = 0.30
 const OUR_FEE      = 0.11
 
 // Timings
-const PHASE_MS      = 2800  // how long each state is held
+const PHASE_MS      = 1800  // how long each state is held
 const TRANSITION_MS = 950   // arc transition duration
 
 type Phase = 'platform' | 'ours'
@@ -53,14 +53,49 @@ function useCommissionAnim(active: boolean): Phase {
 // ─── 3D donut chart ───────────────────────────────────────────────────────────
 
 function CommissionDonut({ phase }: { phase: Phase }) {
+  const { t }  = useLanguage()
   const fee    = phase === 'platform' ? PLATFORM_FEE : OUR_FEE
   const feeArc = CIRC * fee
 
-  const labelText  = phase === 'platform' ? 'Other platforms' : 'Montenegro Select'
-  const labelColor = phase === 'platform' ? `${CREAM}60` : GOLD
+  const isPlatform = phase === 'platform'
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 32 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+
+      {/* Cycling label — above the chart */}
+      <div style={{ position: 'relative', height: 54, display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: 220 }}>
+        {/* Other platforms text */}
+        <p style={{
+          margin: 0,
+          position: 'absolute',
+          fontSize: 13,
+          fontFamily: 'Inter, sans-serif',
+          fontWeight: 600,
+          letterSpacing: '0.10em',
+          textTransform: 'uppercase',
+          color: `${CREAM}60`,
+          opacity: isPlatform ? 1 : 0,
+          transition: `opacity ${TRANSITION_MS}ms ${easeOut}`,
+          whiteSpace: 'nowrap',
+        }}>
+          {t('partner.commission.otherPlatforms')}
+        </p>
+
+        {/* Montenegro Select logo */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logos/full_logo_gold.svg"
+          alt="Montenegro Select"
+          style={{
+            position: 'absolute',
+            height: 54,
+            width: 'auto',
+            objectFit: 'contain',
+            opacity: isPlatform ? 0 : 1,
+            transition: `opacity ${TRANSITION_MS}ms ${easeOut}`,
+          }}
+        />
+      </div>
 
       {/* Chart */}
       <div style={{ position: 'relative', width: 240, height: 260 }}>
@@ -171,20 +206,6 @@ function CommissionDonut({ phase }: { phase: Phase }) {
         </svg>
       </div>
 
-      {/* Cycling label */}
-      <p style={{
-        margin: 0,
-        fontSize: 13,
-        fontFamily: 'Inter, sans-serif',
-        fontWeight: 600,
-        letterSpacing: '0.10em',
-        textTransform: 'uppercase',
-        color: labelColor,
-        transition: `color ${TRANSITION_MS}ms ${easeOut}`,
-      }}>
-        {labelText}
-      </p>
-
       {/* Legend */}
       <div style={{ display: 'flex', gap: 24 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -198,7 +219,7 @@ function CommissionDonut({ phase }: { phase: Phase }) {
             fontSize: 13, fontFamily: 'Inter, sans-serif',
             color: `${CREAM}70`, letterSpacing: '0.03em',
           }}>
-            Your earnings
+            {t('partner.commission.yourEarnings')}
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -212,7 +233,7 @@ function CommissionDonut({ phase }: { phase: Phase }) {
             fontSize: 13, fontFamily: 'Inter, sans-serif',
             color: `${CREAM}70`, letterSpacing: '0.03em',
           }}>
-            Commission
+            {t('partner.commission.commission')}
           </span>
         </div>
       </div>
@@ -272,7 +293,6 @@ export function CommissionSection() {
               style={{
                 fontSize: 'clamp(1rem, 1.3vw, 1.15rem)',
                 color: `${CREAM}99`,
-                maxWidth: '38ch',
               }}
             >
               {t('partner.commission.subheadline')}
