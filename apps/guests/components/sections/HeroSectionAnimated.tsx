@@ -320,6 +320,7 @@ function HeroSectionAnimated() {
       layoutShiftStart + TIMING.layoutShift + TIMING.textReveal + TIMING.emailSlide
     )
     return () => {
+      hasStarted.current = false
       clearTimeout(t1)
       clearTimeout(t2)
       clearTimeout(t3)

@@ -101,7 +101,8 @@
   },
   "finalCta": {
     "headline": "Uskoro pokretanje",
-    "subtext": "Pridružite se osnivačkom krugu."
+    "subtext": "Pridružite se osnivačkom krugu.",
+    "partnerCopy": "Imate li biznis u Crnoj Gori?"
   },
   "footer": {
     "privacyPolicy": "Politika privatnosti",
@@ -115,5 +116,31 @@
       "invalid": "Molimo unesite ispravnu e-adresu"
     },
     "success": "Hvala! Uskoro ćemo vas kontaktirati."
+  },
+  "partnerNudge": {
+    "question": "Da li ste turistička kompanija u Crnoj Gori?",
+    "cta": "Postanite partner"
+  },
+  "partner": {
+    "hero": {
+      "preheadline": "Za biznise u Crnoj Gori",
+      "headline": "Postanite partner i predstavite ono najbolje od Crne Gore",
+      "subheadline": "Privucite goste koji traže autentična, pouzdana i vrhunska iskustva",
+      "cta": "Postanite Partner",
+      "microcopy": "Selektivno. Kuratirano. Premium."
+    },
+    "becomePartner": "Postanite partner",
+    "offers": {
+      "headline": "Šaljite posebne ponude našim članovima",
+      "subheadline": "Nagradite goste ekskluzivnim ponudama. Potaknite ponovne posjete i izgradite lojalnost s članovima koji traže najboljа iskustva."
+    },
+    "bookings": {
+      "headline": "Više potvrđenih rezervacija s bezbjednim plaćanjem",
+      "subheadline": "Gosti rezervišu i plaćaju direktno putem naše platforme. Vi dobijate potvrđene rezervacije i pouzdan prihod — bez administracije."
+    },
+    "beSeen": {
+      "headline": "Budite vidljivi iznad ostalih",
+      "subheadline": "Dio naše mreže — i vaš biznis postaje primjetan. Povjerenje privlači goste i gradi dugoročan uspjeh."
+    }
   }
 }
