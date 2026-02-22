@@ -1,11 +1,17 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Logo } from '@mne-select/ui'
 import { LanguageToggle } from './LanguageToggle'
+import { useLanguage } from '../contexts/LanguageContext'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const { t } = useLanguage()
+  const pathname = usePathname()
+  const isPartnerPage = pathname === '/partner'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +60,18 @@ export function Header() {
             />
           </div>
 
-          {/* Right: Language Toggle */}
-          <div className="flex-shrink-0">
+          {/* Right: Become a Partner + Language Toggle */}
+          <div className="flex items-center gap-3 md:gap-4 flex-shrink-0">
+            {/* Hide the CTA on the partner page itself */}
+            {!isPartnerPage && (
+              <Link
+                href="/partner"
+                className="hidden sm:inline-block rounded-md border border-gold text-gold px-4 py-2 font-body font-medium text-sm tracking-wide hover:bg-gold hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 transition-colors duration-200"
+                aria-label={t('partner.becomePartner')}
+              >
+                {t('partner.becomePartner')}
+              </Link>
+            )}
             <LanguageToggle />
           </div>
         </div>

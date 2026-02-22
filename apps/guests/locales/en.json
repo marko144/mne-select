@@ -101,7 +101,8 @@
   },
   "finalCta": {
     "headline": "Launching Soon",
-    "subtext": "Join the founding circle."
+    "subtext": "Join the founding circle.",
+    "partnerCopy": "Are you a business in Montenegro?"
   },
   "footer": {
     "privacyPolicy": "Privacy Policy",
@@ -115,5 +116,15 @@
       "invalid": "Please enter a valid email"
     },
     "success": "Thank you! We'll be in touch soon."
+  },
+  "partner": {
+    "hero": {
+      "preheadline": "For businesses in Montenegro",
+      "headline": "Put your business on the map",
+      "subheadline": "Join Montenegro Select's curated partner network and reach premium guests discovering the very best of the Adriatic coast.",
+      "cta": "Apply to become a partner",
+      "microcopy": "Selective. Curated. Premium."
+    },
+    "becomePartner": "Become a partner"
   }
 }

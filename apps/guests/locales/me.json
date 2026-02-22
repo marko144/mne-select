@@ -101,7 +101,8 @@
   },
   "finalCta": {
     "headline": "Uskoro pokretanje",
-    "subtext": "Pridružite se osnivačkom krugu."
+    "subtext": "Pridružite se osnivačkom krugu.",
+    "partnerCopy": "Imate li biznis u Crnoj Gori?"
   },
   "footer": {
     "privacyPolicy": "Politika privatnosti",
@@ -115,5 +116,15 @@
       "invalid": "Molimo unesite ispravnu e-adresu"
     },
     "success": "Hvala! Uskoro ćemo vas kontaktirati."
+  },
+  "partner": {
+    "hero": {
+      "preheadline": "Za biznise u Crnoj Gori",
+      "headline": "Stavite vaš biznis na mapu",
+      "subheadline": "Pridružite se kuratiranoj partnerskoj mreži Montenegro Select i doprite do premium gostiju koji otkrivaju ono najljepše na Jadranskoj obali.",
+      "cta": "Prijavite se za partnerstvo",
+      "microcopy": "Selektivno. Kuratirano. Premium."
+    },
+    "becomePartner": "Postanite partner"
   }
 }
