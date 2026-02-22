@@ -3,6 +3,11 @@ import React from 'react'
 export interface LogoProps {
   variant?: 'gold' | 'cream'
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
+  /** Override the height derived from `size`. Width is automatically proportional (4:1 ratio)
+   *  unless `width` is also specified. Prefer this over CSS rescaling to keep SVG sharp. */
+  height?: number
+  /** Override the width derived from `size`. Requires `height` to also be set. */
+  width?: number
   className?: string
   onClick?: () => void
 }
@@ -15,15 +20,15 @@ const sizeMap = {
   '2xl': 72, // 3x sm - for footer
 }
 
-export function Logo({ variant = 'gold', size = 'md', className = '', onClick }: LogoProps) {
+export function Logo({ variant = 'gold', size = 'md', height: heightProp, width: widthProp, className = '', onClick }: LogoProps) {
   const logoSrc =
     variant === 'gold'
       ? '/logos/full_logo_gold.svg'
       : '/logos/full_logo_cream.svg'
 
-  const height = sizeMap[size]
+  const height = heightProp ?? sizeMap[size]
   // Assuming logo has roughly 4:1 aspect ratio (adjust based on actual logo)
-  const width = height * 4
+  const width = widthProp ?? height * 4
 
   const handleClick = onClick
     ? onClick

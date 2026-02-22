@@ -44,14 +44,28 @@ export function Header() {
         `}
       >
         <div className="h-full px-6 md:px-12 lg:px-16 flex items-center justify-between">
-          {/* Left: Logo — navigates home on partner page, scrolls to top on main page */}
+          {/* Left: Logo — navigates home on partner page, scrolls to top on main page.
+              Two renders sized at exact integer pixel dimensions per breakpoint so the SVG
+              is never rescaled via CSS, which would distort thin letterforms like SELECT. */}
           <div className="flex-shrink-0">
-            <Logo
-              variant="gold"
-              size="xl"
-              className="transition-all duration-base"
-              onClick={isPartnerPage ? () => router.push('/') : undefined}
-            />
+            {/* Mobile: 30% smaller — 42 × 0.7 = 29px × 116px */}
+            <span className="sm:hidden">
+              <Logo
+                variant="gold"
+                height={29}
+                width={116}
+                onClick={isPartnerPage ? () => router.push('/') : undefined}
+              />
+            </span>
+            {/* Tablet / Desktop: full xl size (42px × 168px) */}
+            <span className="hidden sm:inline-flex">
+              <Logo
+                variant="gold"
+                size="xl"
+                className="transition-all duration-base"
+                onClick={isPartnerPage ? () => router.push('/') : undefined}
+              />
+            </span>
           </div>
 
           {/* Right: Become a Partner + Language Toggle */}
