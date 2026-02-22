@@ -9,10 +9,16 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(request: NextRequest) {
   try {
-    const { businessName, location, email, phone } = await request.json()
+    const { name, businessName, location, email, phone } = await request.json()
 
     // ── Input validation ────────────────────────────────────────────────────
 
+    if (!name?.trim()) {
+      return NextResponse.json({ error: 'Name is required' }, { status: 400 })
+    }
+    if (name.trim().length > 25) {
+      return NextResponse.json({ error: 'Name must be 25 characters or fewer' }, { status: 400 })
+    }
     if (!businessName?.trim()) {
       return NextResponse.json({ error: 'Business name is required' }, { status: 400 })
     }
@@ -47,6 +53,9 @@ export async function POST(request: NextRequest) {
         'Business Name': {
           title: [{ text: { content: businessName.trim() } }],
         },
+        Name: {
+          rich_text: [{ text: { content: name.trim() } }],
+        },
         Location: {
           rich_text: [{ text: { content: location.trim() } }],
         },
@@ -59,7 +68,7 @@ export async function POST(request: NextRequest) {
       },
     })
 
-    console.log('✅ Partner application submitted:', businessName, email)
+    console.log('✅ Partner application submitted:', name, businessName, email)
 
     return NextResponse.json(
       { success: true, message: 'Application received', id: response.id },
