@@ -1606,3 +1606,63 @@ export const BOK_SELJANOVO: { readonly x: number; readonly y: number } = {
   x: 600,
   y: 285.23,
 } as const;
+
+// ---------------------------------------------------------------------------
+// Multi-marker network
+// ---------------------------------------------------------------------------
+
+/** Service category for each partner map pin. */
+export type ServiceType =
+  | 'marina'
+  | 'car-rental'
+  | 'beach-club'
+  | 'restaurant'
+  | 'tour-guide'
+
+export interface PinMarker {
+  readonly id: string
+  readonly serviceType: ServiceType
+  /** Human-readable location name */
+  readonly location: string
+  /** Pre-computed x in the 0 0 900 540 SVG coordinate space */
+  readonly x: number
+  /** Pre-computed y in the 0 0 900 540 SVG coordinate space */
+  readonly y: number
+}
+
+/**
+ * The five partner-network markers, in animation order.
+ * Coordinates were computed with the same equirectangular projection used by
+ * the Overpass script (BBOX 42.34–42.535 N, 18.43–18.82 E; 900×540 SVG).
+ */
+export const BOK_MARKERS: readonly PinMarker[] = [
+  { id: 'm0', serviceType: 'marina',      location: 'Seljanovo',    x: BOK_SELJANOVO.x, y: BOK_SELJANOVO.y },
+  { id: 'm1', serviceType: 'car-rental',  location: 'Tivat Airport', x: 676.8, y: 360.8 },
+  { id: 'm2', serviceType: 'beach-club',  location: 'Luštica Bay',   x: 512.5, y: 424.0 },
+  { id: 'm3', serviceType: 'restaurant',  location: 'Herceg Novi',   x: 246.9, y: 225.4 },
+  { id: 'm4', serviceType: 'tour-guide',  location: 'Perast',        x: 621.2, y: 133.2 },
+] as const
+
+/**
+ * A zoomed-in SVG viewBox that frames all five BOK_MARKERS with breathing
+ * room and maintains a landscape aspect ratio (~1.18:1) suitable for the
+ * hero map panel.  Use with preserveAspectRatio="xMidYMid meet" to
+ * guarantee every marker is visible regardless of viewport height.
+ */
+/**
+ * Zoomed viewBox that frames all five BOK_MARKERS (including Herceg Novi
+ * on the outer bay) with ~60 SVG-unit padding on every side.
+ * Aspect ratio ≈ 1.34:1 — works well with preserveAspectRatio="xMidYMid meet".
+ */
+export const BOK_INNER_VIEWBOX = '185 70 555 415' as const
+
+/**
+ * All unique pairs for a full-mesh network between the five markers.
+ * Each tuple is [markerIndexA, markerIndexB].
+ */
+export const BOK_MESH_PAIRS: readonly [number, number][] = [
+  [0, 1], [0, 2], [0, 3], [0, 4],
+  [1, 2], [1, 3], [1, 4],
+  [2, 3], [2, 4],
+  [3, 4],
+] as const

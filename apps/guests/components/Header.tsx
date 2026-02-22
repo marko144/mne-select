@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Logo } from '@mne-select/ui'
 import { LanguageToggle } from './LanguageToggle'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -11,6 +11,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const { t } = useLanguage()
   const pathname = usePathname()
+  const router = useRouter()
   const isPartnerPage = pathname === '/partner'
 
   useEffect(() => {
@@ -31,14 +32,6 @@ export function Header() {
 
   return (
     <>
-      {/* Skip to content link for accessibility */}
-      <a
-        href="#main-content"
-        className="skip-to-content"
-      >
-        Skip to main content
-      </a>
-
       <header
         className={`
           fixed top-0 left-0 right-0 z-[1000]
@@ -51,12 +44,13 @@ export function Header() {
         `}
       >
         <div className="h-full px-6 md:px-12 lg:px-16 flex items-center justify-between">
-          {/* Left: Logo */}
+          {/* Left: Logo — navigates home on partner page, scrolls to top on main page */}
           <div className="flex-shrink-0">
             <Logo
               variant="gold"
               size="xl"
               className="transition-all duration-base"
+              onClick={isPartnerPage ? () => router.push('/') : undefined}
             />
           </div>
 

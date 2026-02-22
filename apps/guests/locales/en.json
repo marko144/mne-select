@@ -117,14 +117,30 @@
     },
     "success": "Thank you! We'll be in touch soon."
   },
+  "partnerNudge": {
+    "question": "Are you a tourism business in Montenegro?",
+    "cta": "Become a partner"
+  },
   "partner": {
     "hero": {
       "preheadline": "For businesses in Montenegro",
-      "headline": "Put your business on the map",
-      "subheadline": "Join Montenegro Select's curated partner network and reach premium guests discovering the very best of the Adriatic coast.",
+      "headline": "Become a partner and represent the best of Montenegro",
+      "subheadline": "Be discovered by those looking for trusted, high quality experiences",
       "cta": "Apply to become a partner",
       "microcopy": "Selective. Curated. Premium."
     },
-    "becomePartner": "Become a partner"
+    "becomePartner": "Become a partner",
+    "offers": {
+      "headline": "Send special offers to our members",
+      "subheadline": "Reward guests directly with exclusive deals. Drive repeat visits and build loyalty with members who are actively looking for the best experiences."
+    },
+    "bookings": {
+      "headline": "More confirmed bookings with secure payment",
+      "subheadline": "Guests book and pay directly through our platform. You receive confirmed reservations and reliable income — without the admin."
+    },
+    "beSeen": {
+      "headline": "Be seen above the rest",
+      "subheadline": "Being part of our network will get you noticed in a crowded market. Being a trusted partner drives more customers to your business."
+    }
   }
 }

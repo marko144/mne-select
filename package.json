@@ -16,7 +16,8 @@
     "type-check": "turbo type-check",
     "generate:types": "supabase gen types typescript --local > packages/shared-types/src/database.types.ts",
     "generate:montenegro-land": "node scripts/generate-montenegro-land-path.js",
-    "generate:bay-of-kotor": "node scripts/generate-bay-of-kotor-map.js"
+    "generate:bay-of-kotor": "node scripts/generate-bay-of-kotor-map.js",
+    "generate:porto-montenegro": "node scripts/generate-porto-montenegro-map.js"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

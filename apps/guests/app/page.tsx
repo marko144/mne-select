@@ -35,6 +35,7 @@ export default function Home() {
 
         {/* FAQ Section */}
         <FAQSection />
+
       </main>
 
       <Footer />

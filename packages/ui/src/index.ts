@@ -29,3 +29,6 @@ export type { CarouselDotsProps } from './components/CarouselDots'
 
 export { CookieBanner } from './components/CookieBanner'
 export type { CookieBannerProps } from './components/CookieBanner'
+
+export { Modal } from './components/Modal'
+export type { ModalProps } from './components/Modal'

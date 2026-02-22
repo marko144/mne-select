@@ -18,28 +18,22 @@ export function FinalCTASection() {
             {t('finalCta.headline')}
           </h2>
 
-          {/* Subtext */}
-          <p className="text-lg text-cream-muted">
-            {t('finalCta.subtext')}
-          </p>
-
           {/* CTA Form */}
           <div className="pt-2">
             <EmailCaptureForm showMicrocopy={false} />
           </div>
 
-          {/* Secondary partner CTA */}
-          <div className="pt-4 border-t border-cream-subtle/20">
-            <p className="text-cream-subtle text-sm mb-3">
-              {t('finalCta.partnerCopy') || 'Are you a business in Montenegro?'}
-            </p>
+          {/* Partner nudge — below the email form */}
+          <p className="font-body text-lg text-cream-muted leading-relaxed pt-2">
+            {t('partnerNudge.question')}{' '}
             <Link
               href="/partner"
-              className="inline-block text-gold text-sm font-body font-medium underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded transition-colors duration-150"
+              className="text-gold hover:text-gold/80 underline underline-offset-4 decoration-gold/40 hover:decoration-gold/70 transition-colors duration-200 font-medium"
             >
-              {t('partner.becomePartner')} →
+              {t('partnerNudge.cta')} →
             </Link>
-          </div>
+          </p>
+
         </div>
       </Container>
     </Section>
