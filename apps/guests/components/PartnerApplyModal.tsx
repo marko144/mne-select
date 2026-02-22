@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FormEvent, useRef, useState } from 'react'
+import React, { FormEvent, useEffect, useRef, useState } from 'react'
 import { Modal, Input, Button } from '@mne-select/ui'
 import { useLanguage } from '../contexts/LanguageContext'
 
@@ -157,6 +157,105 @@ function LocationInput({
   )
 }
 
+// ─── Country dial code custom dropdown ───────────────────────────────────────
+
+/**
+ * Trigger shows: ISO code + dial (e.g. "ME +382")
+ * Dropdown list shows: dial + full name (e.g. "+382 Montenegro")
+ */
+function PhoneDialSelect({
+  dialCode,
+  onChange,
+}: {
+  dialCode: string
+  onChange: (dial: string) => void
+}) {
+  const [open, setOpen]   = useState(false)
+  const wrapRef           = useRef<HTMLDivElement>(null)
+  const listRef           = useRef<HTMLUListElement>(null)
+
+  // Track ISO code internally so that shared dial codes (+1 for CA/US etc.) resolve correctly
+  const [selectedCode, setSelectedCode] = useState(
+    () => COUNTRY_CODES.find(c => c.dial === dialCode)?.code ?? 'ME'
+  )
+  const selected = COUNTRY_CODES.find(c => c.code === selectedCode) ?? COUNTRY_CODES[0]
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return
+    const handler = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [open])
+
+  // Scroll selected item into view when list opens
+  useEffect(() => {
+    if (!open || !listRef.current) return
+    const active = listRef.current.querySelector('[aria-selected="true"]') as HTMLElement | null
+    active?.scrollIntoView({ block: 'nearest' })
+  }, [open])
+
+  return (
+    <div ref={wrapRef} className="relative shrink-0">
+      {/* Trigger — shows ISO code + dial code only */}
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label="Country dial code"
+        className="h-full px-3 py-3.5 flex items-center gap-1.5 text-cream text-sm font-body border-r border-cream/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold cursor-pointer bg-transparent whitespace-nowrap"
+      >
+        <span className="font-medium">{selected.code}</span>
+        <span className="text-cream/55">{selected.dial}</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true" className="opacity-40 ml-0.5">
+          <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      {/* Dropdown list — shows dial + full country name */}
+      {open && (
+        <ul
+          ref={listRef}
+          role="listbox"
+          aria-label="Select country"
+          className="absolute z-[60] top-full left-0 mt-1 rounded-md border border-cream/15 overflow-y-auto"
+          style={{
+            background: '#0d2035',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.55)',
+            maxHeight: 220,
+            width: 230,
+          }}
+        >
+          {COUNTRY_CODES.map(c => {
+            const isSelected = c.code === selectedCode
+            return (
+              <li
+                key={`${c.code}-${c.dial}`}
+                role="option"
+                aria-selected={isSelected}
+                onMouseDown={() => { setSelectedCode(c.code); onChange(c.dial); setOpen(false) }}
+                className={`px-4 py-2.5 text-sm font-body cursor-pointer flex items-center gap-2 transition-colors duration-100
+                  ${isSelected
+                    ? 'text-gold bg-gold/10'
+                    : 'text-cream hover:bg-gold/10 hover:text-gold'
+                  }`}
+              >
+                <span className="text-cream/45 w-10 shrink-0 tabular-nums">{c.dial}</span>
+                <span>{c.name}</span>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 // ─── Phone field (dial code select + number input) ────────────────────────────
 
 function PhoneInput({
@@ -183,26 +282,9 @@ function PhoneInput({
         Phone number <span className="text-gold ml-0.5">*</span>
       </label>
       <div
-        className={`flex rounded-md border bg-cream/10 transition-all duration-base overflow-hidden min-h-[48px] ${borderCls} ${focusCls}`}
+        className={`flex rounded-md border bg-cream/10 transition-all duration-base overflow-visible min-h-[48px] ${borderCls} ${focusCls}`}
       >
-        {/* Country code select */}
-        <select
-          value={dialCode}
-          onChange={e => onDialChange(e.target.value)}
-          aria-label="Country dial code"
-          className="shrink-0 bg-transparent text-cream text-sm font-body pl-3 pr-1 py-3.5 border-r border-cream/15 focus:outline-none cursor-pointer appearance-none"
-          style={{ minWidth: '5rem', maxWidth: '7rem' }}
-        >
-          {COUNTRY_CODES.map(c => (
-            <option
-              key={`${c.code}-${c.dial}`}
-              value={c.dial}
-              style={{ background: '#0f2a44', color: '#e8e6e1' }}
-            >
-              {c.dial} {c.name}
-            </option>
-          ))}
-        </select>
+        <PhoneDialSelect dialCode={dialCode} onChange={onDialChange} />
 
         {/* Number input */}
         <input
@@ -232,6 +314,7 @@ interface PartnerApplyModalProps {
 }
 
 interface FormState {
+  name:         string
   businessName: string
   location:     string
   email:        string
@@ -240,6 +323,7 @@ interface FormState {
 }
 
 interface FormErrors {
+  name?:        string
   businessName?: string
   location?:     string
   email?:        string
@@ -250,6 +334,7 @@ export function PartnerApplyModal({ isOpen, onClose }: PartnerApplyModalProps) {
   const { t } = useLanguage()
 
   const [form, setForm] = useState<FormState>({
+    name:         '',
     businessName: '',
     location:     '',
     email:        '',
@@ -266,6 +351,10 @@ export function PartnerApplyModal({ isOpen, onClose }: PartnerApplyModalProps) {
 
   const validate = (): FormErrors => {
     const e: FormErrors = {}
+    if (!form.name.trim())
+      e.name = 'Name is required'
+    else if (form.name.trim().length > 25)
+      e.name = 'Name must be 25 characters or fewer'
     if (!form.businessName.trim()) e.businessName = 'Business name is required'
     if (!form.location.trim())     e.location     = 'Location is required'
     if (!form.email.trim() || !EMAIL_RE.test(form.email))
@@ -289,6 +378,7 @@ export function PartnerApplyModal({ isOpen, onClose }: PartnerApplyModalProps) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          name:         form.name.trim(),
           businessName: form.businessName.trim(),
           location:     form.location.trim(),
           email:        form.email.trim(),
@@ -310,7 +400,7 @@ export function PartnerApplyModal({ isOpen, onClose }: PartnerApplyModalProps) {
     onClose()
     // Reset after transition
     setTimeout(() => {
-      setForm({ businessName: '', location: '', email: '', dialCode: '+382', phoneNumber: '' })
+      setForm({ name: '', businessName: '', location: '', email: '', dialCode: '+382', phoneNumber: '' })
       setErrors({})
       setServerError('')
       setIsSuccess(false)
@@ -347,6 +437,17 @@ export function PartnerApplyModal({ isOpen, onClose }: PartnerApplyModalProps) {
         /* ── Form ──────────────────────────────────────────────── */
         <form onSubmit={handleSubmit} noValidate>
           <div className="px-6 py-6 flex flex-col gap-5">
+
+            <Input
+              label="Name"
+              placeholder="e.g. Ana Petrović"
+              required
+              value={form.name}
+              onChange={e => set('name')(e.target.value)}
+              error={errors.name}
+              autoComplete="name"
+              maxLength={25}
+            />
 
             <Input
               label="Business name"
