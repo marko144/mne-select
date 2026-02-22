@@ -6,6 +6,7 @@ import { useLanguage } from '../../contexts/LanguageContext'
 // ─── Design tokens ───────────────────────────────────────────────────────────
 
 const GOLD    = '#c2a24d'
+const NAVY    = '#0f2a44'
 const CREAM   = '#e8e6e1'
 const easeOut = 'cubic-bezier(0.25, 0.1, 0.25, 1)'
 
@@ -69,21 +70,21 @@ function CalendarIcon() {
   return (
     <svg width="54" height="54" viewBox="0 0 54 54" fill="none" aria-hidden="true">
       {/* Body */}
-      <rect x="5" y="11" width="44" height="38" rx="5" stroke={`${CREAM}55`} strokeWidth="1.6" />
+      <rect x="5" y="11" width="44" height="38" rx="5" stroke={`${NAVY}40`} strokeWidth="1.6" />
       {/* Header band */}
-      <rect x="5" y="11" width="44" height="14" rx="5" fill={`${CREAM}07`} />
+      <rect x="5" y="11" width="44" height="14" rx="5" fill={`${NAVY}08`} />
       {/* Binding posts */}
-      <line x1="18" y1="6" x2="18" y2="17" stroke={`${CREAM}65`} strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="36" y1="6" x2="36" y2="17" stroke={`${CREAM}65`} strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="18" y1="6" x2="18" y2="17" stroke={`${NAVY}55`} strokeWidth="2.5" strokeLinecap="round" />
+      <line x1="36" y1="6" x2="36" y2="17" stroke={`${NAVY}55`} strokeWidth="2.5" strokeLinecap="round" />
       {/* Day dots row 1 */}
-      <circle cx="15" cy="32" r="1.6" fill={`${CREAM}40`} />
-      <circle cx="27" cy="32" r="1.6" fill={`${CREAM}40`} />
-      <circle cx="39" cy="32" r="1.6" fill={`${CREAM}40`} />
+      <circle cx="15" cy="32" r="1.6" fill={`${NAVY}35`} />
+      <circle cx="27" cy="32" r="1.6" fill={`${NAVY}35`} />
+      <circle cx="39" cy="32" r="1.6" fill={`${NAVY}35`} />
       {/* Day dots row 2 */}
-      <circle cx="15" cy="42" r="1.6" fill={`${CREAM}40`} />
+      <circle cx="15" cy="42" r="1.6" fill={`${NAVY}35`} />
       {/* Highlighted date */}
       <rect x="22" y="37" width="10" height="10" rx="2.5" fill={GOLD} opacity="0.9" />
-      <circle cx="39" cy="42" r="1.6" fill={`${CREAM}40`} />
+      <circle cx="39" cy="42" r="1.6" fill={`${NAVY}35`} />
     </svg>
   )
 }
@@ -113,45 +114,45 @@ function PhoneMockup({ phase }: { phase: number }) {
       style={{
         width: 240,
         height: 504,
-        background: '#06101a',
+        background: NAVY,
         borderRadius: 44,
-        border: '1.5px solid rgba(194,162,77,0.16)',
+        border: `1.5px solid ${GOLD}30`,
         boxShadow: [
-          '0 0 0 1px rgba(194,162,77,0.04)',
-          '0 60px 120px rgba(0,0,0,0.75)',
-          '0 20px 50px rgba(0,0,0,0.45)',
-          'inset 0 1px 0 rgba(255,255,255,0.05)',
+          `0 0 0 1px ${GOLD}08`,
+          '0 48px 100px rgba(232,230,225,0.10)',
+          '0 16px 48px rgba(232,230,225,0.06)',
+          `inset 0 1px 0 ${GOLD}12`,
         ].join(', '),
-        padding: 14,
+        padding: 8,
         position: 'relative',
         flexShrink: 0,
       }}
     >
       {/* Decorative side buttons */}
-      <div style={{ position: 'absolute', top: 88, left: -3, width: 3, height: 30, background: '#0e1e2e', borderRadius: '2px 0 0 2px' }} />
-      <div style={{ position: 'absolute', top: 130, left: -3, width: 3, height: 22, background: '#0e1e2e', borderRadius: '2px 0 0 2px' }} />
-      <div style={{ position: 'absolute', top: 100, right: -3, width: 3, height: 40, background: '#0e1e2e', borderRadius: '0 2px 2px 0' }} />
+      <div style={{ position: 'absolute', top: 88, left: -3, width: 3, height: 30, background: '#0a1f33', borderRadius: '2px 0 0 2px' }} />
+      <div style={{ position: 'absolute', top: 130, left: -3, width: 3, height: 22, background: '#0a1f33', borderRadius: '2px 0 0 2px' }} />
+      <div style={{ position: 'absolute', top: 100, right: -3, width: 3, height: 40, background: '#0a1f33', borderRadius: '0 2px 2px 0' }} />
 
       {/* Screen */}
       <div
         style={{
-          background: '#091521',
-          borderRadius: 32,
+          background: CREAM,
+          borderRadius: 36,
           overflow: 'hidden',
           height: '100%',
           position: 'relative',
         }}
       >
-        {/* Notch */}
+        {/* Notch — sits inside the navy header so it blends naturally */}
         <div
           style={{
             position: 'absolute',
             top: 12,
             left: '50%',
             transform: 'translateX(-50%)',
-            width: 60,
-            height: 6,
-            background: '#06101a',
+            width: 56,
+            height: 5,
+            background: '#061525',
             borderRadius: 3,
             zIndex: 10,
           }}
@@ -168,21 +169,30 @@ function PhoneMockup({ phase }: { phase: number }) {
           }}
         >
           {/* ── Screen 1: Booking ──────────────────────────── */}
-          <div style={{ width: '50%', flexShrink: 0, display: 'flex', flexDirection: 'column', padding: '34px 18px 18px' }}>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: '50%', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
+            {/* Navy header bar — notch blends in */}
+            <div style={{
+              background: NAVY,
+              paddingTop: 30,
+              paddingBottom: 12,
+              paddingLeft: 18,
+              paddingRight: 18,
+              display: 'flex',
+              justifyContent: 'center',
+              borderBottom: `1px solid ${GOLD}25`,
+            }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logos/full_logo_gold.svg"
+                src="/logos/full_logo_cream.svg"
                 alt="Montenegro Select"
-                height={16}
-                width={64}
-                style={{ height: 16, width: 'auto', objectFit: 'contain' }}
+                height={18}
+                width={72}
+                style={{ height: 18, width: 'auto', objectFit: 'contain' }}
               />
             </div>
-            <div style={{ height: 1, background: `${CREAM}09`, margin: '10px 0' }} />
 
             {/* Content area */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '0 18px' }}>
               {/* Calendar icon */}
               <div style={{
                 opacity: calVisible ? 1 : 0,
@@ -199,13 +209,13 @@ function PhoneMockup({ phase }: { phase: number }) {
                 transition: `opacity 400ms ${easeOut} 80ms, transform 400ms ${easeOut} 80ms`,
                 textAlign: 'center',
               }}>
-                <p style={{ margin: 0, fontSize: 15, color: CREAM, fontFamily: 'Inter,sans-serif', fontWeight: 500 }}>Mon, 14 July</p>
-                <p style={{ margin: '3px 0 0', fontSize: 10, color: `${CREAM}55`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.03em' }}>
+                <p style={{ margin: 0, fontSize: 15, color: NAVY, fontFamily: 'Inter,sans-serif', fontWeight: 500 }}>Mon, 14 July</p>
+                <p style={{ margin: '3px 0 0', fontSize: 10, color: `${NAVY}60`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.03em' }}>
                   Adventure Tour · 2 hrs
                 </p>
               </div>
 
-              <div style={{ width: '100%', height: 1, background: `${CREAM}09` }} />
+              <div style={{ width: '100%', height: 1, background: `${NAVY}15` }} />
 
               {/* Price row */}
               <div style={{
@@ -216,13 +226,14 @@ function PhoneMockup({ phase }: { phase: number }) {
                 opacity: calVisible ? 1 : 0,
                 transition: `opacity 400ms ${easeOut} 160ms`,
               }}>
-                <span style={{ fontSize: 10, color: `${CREAM}45`, fontFamily: 'Inter,sans-serif' }}>Total</span>
-                <span style={{ fontSize: 14, color: CREAM, fontFamily: 'Inter,sans-serif', fontWeight: 600 }}>€55.00</span>
+                <span style={{ fontSize: 10, color: `${NAVY}55`, fontFamily: 'Inter,sans-serif' }}>Total</span>
+                <span style={{ fontSize: 14, color: NAVY, fontFamily: 'Inter,sans-serif', fontWeight: 600 }}>€55.00</span>
               </div>
             </div>
 
             {/* BOOK NOW button */}
             <div style={{
+              padding: '0 18px 18px',
               opacity: btnVisible ? 1 : 0,
               transform: btnVisible ? 'translateY(0)' : 'translateY(16px)',
               transition: `opacity 350ms ${easeOut}, transform 350ms ${easeOut}`,
@@ -236,7 +247,7 @@ function PhoneMockup({ phase }: { phase: number }) {
                 filter: bookPressed ? 'brightness(0.80)' : 'brightness(1)',
                 transition: 'transform 80ms ease-in, filter 80ms ease-in',
               }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: '#0f2a44', letterSpacing: '0.12em', fontFamily: 'Inter,sans-serif', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.12em', fontFamily: 'Inter,sans-serif', textTransform: 'uppercase' }}>
                   Book Now
                 </span>
               </div>
@@ -244,14 +255,25 @@ function PhoneMockup({ phase }: { phase: number }) {
           </div>
 
           {/* ── Screen 2: Payment ──────────────────────────── */}
-          <div style={{ width: '50%', flexShrink: 0, display: 'flex', flexDirection: 'column', padding: '34px 18px 18px' }}>
-            <p style={{ margin: 0, textAlign: 'center', fontSize: 8, color: GOLD, letterSpacing: '0.15em', fontFamily: 'Inter,sans-serif', fontWeight: 600, textTransform: 'uppercase' }}>
-              Secure Payment
-            </p>
-            <div style={{ height: 1, background: `${CREAM}09`, margin: '10px 0' }} />
+          <div style={{ width: '50%', flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
+            {/* Navy header bar — notch blends in */}
+            <div style={{
+              background: NAVY,
+              paddingTop: 30,
+              paddingBottom: 12,
+              paddingLeft: 18,
+              paddingRight: 18,
+              display: 'flex',
+              justifyContent: 'center',
+              borderBottom: `1px solid ${GOLD}25`,
+            }}>
+              <p style={{ margin: 0, fontSize: 8, color: CREAM, letterSpacing: '0.15em', fontFamily: 'Inter,sans-serif', fontWeight: 600, textTransform: 'uppercase' }}>
+                Secure Payment
+              </p>
+            </div>
 
             {/* Content area */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12, padding: '0 18px' }}>
               {/* Lock icon */}
               <div style={{
                 color: GOLD,
@@ -269,15 +291,15 @@ function PhoneMockup({ phase }: { phase: number }) {
                 transform: amtVisible ? 'translateY(0)' : 'translateY(10px)',
                 transition: `opacity 400ms ${easeOut} 80ms, transform 400ms ${easeOut} 80ms`,
               }}>
-                <p style={{ margin: 0, fontSize: 38, fontWeight: 700, color: CREAM, fontFamily: 'Inter,sans-serif', letterSpacing: '-0.02em', lineHeight: 1 }}>
+                <p style={{ margin: 0, fontSize: 38, fontWeight: 700, color: NAVY, fontFamily: 'Inter,sans-serif', letterSpacing: '-0.02em', lineHeight: 1 }}>
                   €55.00
                 </p>
-                <p style={{ margin: '6px 0 0', fontSize: 10, color: `${CREAM}50`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.03em' }}>
+                <p style={{ margin: '6px 0 0', fontSize: 10, color: `${NAVY}60`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.03em' }}>
                   Adventure Tour · 14 Jul
                 </p>
               </div>
 
-              <div style={{ width: '100%', height: 1, background: `${CREAM}09` }} />
+              <div style={{ width: '100%', height: 1, background: `${NAVY}15` }} />
 
               {/* Encrypted badge */}
               <div style={{
@@ -287,8 +309,8 @@ function PhoneMockup({ phase }: { phase: number }) {
                 opacity: amtVisible ? 1 : 0,
                 transition: `opacity 400ms ${easeOut} 160ms`,
               }}>
-                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 6px rgba(34,197,94,0.5)' }} />
-                <span style={{ fontSize: 9, color: `${CREAM}40`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.04em' }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 8px rgba(34,197,94,0.4)' }} />
+                <span style={{ fontSize: 9, color: `${NAVY}55`, fontFamily: 'Inter,sans-serif', letterSpacing: '0.04em' }}>
                   256-bit encrypted
                 </span>
               </div>
@@ -296,6 +318,7 @@ function PhoneMockup({ phase }: { phase: number }) {
 
             {/* PAY button */}
             <div style={{
+              padding: '0 18px 18px',
               opacity: payVisible ? 1 : 0,
               transform: payVisible ? 'translateY(0)' : 'translateY(16px)',
               transition: `opacity 350ms ${easeOut}, transform 350ms ${easeOut}`,
@@ -312,8 +335,8 @@ function PhoneMockup({ phase }: { phase: number }) {
                 filter: payPressed ? 'brightness(0.80)' : 'brightness(1)',
                 transition: 'transform 80ms ease-in, filter 80ms ease-in',
               }}>
-                <div style={{ color: '#0f2a44' }}><LockIcon size={13} /></div>
-                <span style={{ fontSize: 11, fontWeight: 700, color: '#0f2a44', letterSpacing: '0.12em', fontFamily: 'Inter,sans-serif', textTransform: 'uppercase' }}>
+                <div style={{ color: NAVY }}><LockIcon size={13} /></div>
+                <span style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.12em', fontFamily: 'Inter,sans-serif', textTransform: 'uppercase' }}>
                   Pay
                 </span>
               </div>
