@@ -232,9 +232,8 @@ function DesktopHeroText({
     <div className="flex flex-col space-y-5 items-start text-left">
       {/* Headline — slides in from the left */}
       <h1
-        className="font-display text-cream font-medium leading-tight"
+        className="font-display text-cream text-3xl md:text-4xl lg:text-5xl font-medium leading-tight"
         style={{
-          fontSize: 'clamp(2rem, 3.5vw, 3.25rem)',
           opacity: showText ? 1 : 0,
           transform: showText ? 'translateX(0)' : 'translateX(-44px)',
           transition: `opacity ${TIMING.textReveal}ms ${easeOut}, transform ${TIMING.textReveal}ms ${easeOut}`,
@@ -244,9 +243,8 @@ function DesktopHeroText({
       </h1>
       {/* Subheadline — slides in from the right */}
       <p
-        className="text-cream-muted leading-relaxed"
+        className="text-cream-muted text-xl md:text-2xl leading-relaxed"
         style={{
-          fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
           opacity: showText ? 1 : 0,
           transform: showText ? 'translateX(0)' : 'translateX(44px)',
           transition: `opacity ${TIMING.textReveal}ms ${easeOut} 60ms, transform ${TIMING.textReveal}ms ${easeOut} 60ms`,
@@ -297,11 +295,11 @@ function MobileHeroText({
   return (
     <div className="flex flex-col space-y-4 items-center text-center px-6">
       {/* Headline — slides in from the left */}
-      <h1 className="font-display text-cream text-3xl font-medium leading-tight" style={motion(0, 'left')}>
+      <h1 className="font-display text-cream text-3xl md:text-4xl font-medium leading-tight" style={motion(0, 'left')}>
         {t('partner.hero.headline')}
       </h1>
       {/* Subheadline — slides in from the right */}
-      <p className="text-cream-muted text-lg leading-relaxed" style={motion(60, 'right')}>
+      <p className="text-cream-muted text-xl md:text-2xl leading-relaxed" style={motion(60, 'right')}>
         {t('partner.hero.subheadline')}
       </p>
       {/* CTA — slides in from the left, slightly behind headline */}

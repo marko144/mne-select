@@ -80,7 +80,7 @@ function AccordionItem({
         }}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="font-body pb-5 pr-10 text-lg md:text-xl text-cream leading-relaxed">
+          <div className="font-body pb-5 pr-10 text-base text-cream leading-relaxed">
             {children}
           </div>
         </div>

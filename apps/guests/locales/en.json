@@ -13,10 +13,10 @@
   },
   "hero": {
     "headline": {
-      "line1": "Your Curated",
+      "line1": "Your curated",
       "line2": "MONTENEGRO",
-      "line3": "experiences that reward you",
-      "full": "Your curated Montenegro experiences that reward you"
+      "line3": "experiences, experienced by us.",
+      "full": "Your curated Montenegro experiences, experienced by us."
     },
     "subheadline": "Create your entire Montenegro experience with trusted providers, in one place",
     "emailPlaceholder": "Enter your email",
@@ -121,6 +121,49 @@
     "question": "Are you a tourism business in Montenegro?",
     "cta": "Become a partner"
   },
+  "partnerFaq": {
+    "sectionTitle": "Frequently Asked Questions",
+    "howToJoin": {
+      "question": "How do I become a partner?",
+      "answer": "Submit a short application with your name and contact details. Our team will then contact you to discuss your business and next steps. Applications are reviewed individually and acceptance is not guaranteed."
+    },
+    "criteria": {
+      "question": "What are the criteria for joining?",
+      "answer": "Partners must operate legally, maintain high standards of quality and professionalism, and reflect positively on Montenegro as a destination. Additional criteria may apply depending on your business type, location, and demand within your area."
+    },
+    "businessTypes": {
+      "question": "What types of businesses do you work with?",
+      "answer": "We work with selected providers including boat tours, yacht charters, transfers, car rental, hotels, restaurants, beach clubs, experiences, wellness centres, and gyms. Each application is reviewed individually."
+    },
+    "commission": {
+      "question": "How does commission work?",
+      "answer": "Commission applies only to confirmed bookings generated through Montenegro Select. Our structure is designed to be leaner than large global platforms. Full details are shared during onboarding."
+    },
+    "payments": {
+      "question": "How do payments work?",
+      "answer": "Payment processing is an optional service available under selected partner plans and subject to additional agreements and verification. Where enabled, bookings can be secured with payment at the time of reservation."
+    },
+    "control": {
+      "question": "Do I control my pricing and availability?",
+      "answer": "Yes. You retain full control over pricing, availability, booking terms, and targeted offers."
+    },
+    "offers": {
+      "question": "Can I send targeted offers to members?",
+      "answer": "Yes. Partners can create targeted offers to fill slower periods, promote new services, or encourage repeat business. You remain in control of the terms."
+    },
+    "responsibilities": {
+      "question": "What responsibilities do partners have?",
+      "answer": "Partners are expected to maintain valid licences and documentation, operate safely and professionally, and respond to booking enquiries within agreed timeframes. Ongoing compliance is required to remain within the network."
+    },
+    "termination": {
+      "question": "Can my partnership be terminated?",
+      "answer": "Yes. We reserve the right to suspend or terminate partnerships if agreed standards are not maintained or contractual terms are breached."
+    },
+    "exclusivity": {
+      "question": "Is exclusivity required?",
+      "answer": "No. You remain free to operate on other platforms."
+    }
+  },
   "partner": {
     "hero": {
       "preheadline": "For businesses in Montenegro",
@@ -130,6 +173,10 @@
       "microcopy": "Selective. Curated. Premium."
     },
     "becomePartner": "Become a partner",
+    "bottomCta": {
+      "preheadline": "Ready to join?",
+      "heading": "Apply to become a partner"
+    },
     "offers": {
       "headline": "Unlock Demand When It Matters",
       "subheadline": "Reach our members directly with targeted offers designed for quieter hours, shoulder season, or new experiences. Whether it's a limited incentive or a short-term package, you remain in control while accessing an audience already inclined to book quality experiences."

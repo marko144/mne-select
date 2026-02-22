@@ -121,6 +121,49 @@
     "question": "Da li ste turistička kompanija u Crnoj Gori?",
     "cta": "Postanite partner"
   },
+  "partnerFaq": {
+    "sectionTitle": "Često postavljana pitanja",
+    "howToJoin": {
+      "question": "Kako mogu postati partner Montenegro Select mreže?",
+      "answer": "Popunite kratku prijavu sa osnovnim kontakt podacima. Naš tim će vas potom kontaktirati kako bismo razgovarali o vašem poslovanju i narednim koracima. Svaka prijava se razmatra pojedinačno, a prihvatanje nije zagarantovano."
+    },
+    "criteria": {
+      "question": "Koji su kriterijumi za pridruživanje?",
+      "answer": "Partneri moraju poslovati u skladu sa zakonom, održavati visok nivo kvaliteta i profesionalnosti, te pozitivno predstavljati Crnu Goru kao destinaciju. Dodatni kriterijumi mogu se primjenjivati u zavisnosti od vrste usluge, lokacije i potražnje u određenom području."
+    },
+    "businessTypes": {
+      "question": "Koje djelatnosti obuhvata Montenegro Select?",
+      "answer": "Sarađujemo sa pažljivo odabranim pružaocima usluga, uključujući: izlete brodom, čarter jahti, transfere, rent-a-car usluge, hotele i smještaj, restorane, beach club-ove, organizovane aktivnosti i iskustva, wellness centre i teretane. Svaka prijava se razmatra pojedinačno."
+    },
+    "commission": {
+      "question": "Kako funkcioniše provizija?",
+      "answer": "Provizija se primjenjuje isključivo na potvrđene rezervacije ostvarene putem Montenegro Select platforme. Naš model je postavljen tako da bude povoljniji u odnosu na velike globalne platforme. Detalji se definišu tokom procesa saradnje."
+    },
+    "payments": {
+      "question": "Kako funkcionišu plaćanja?",
+      "answer": "Procesiranje plaćanja je dodatna, opciona usluga dostupna u okviru određenih partnerskih paketa i podliježe posebnim ugovornim uslovima i provjerama. Kada je ova opcija aktivna, rezervacije se mogu potvrditi uplatom u trenutku bukiranja."
+    },
+    "control": {
+      "question": "Da li zadržavam kontrolu nad cijenama i dostupnošću?",
+      "answer": "Da. Zadržavate potpunu kontrolu nad cijenama, raspoloživošću, uslovima rezervacije i posebnim ponudama."
+    },
+    "offers": {
+      "question": "Da li mogu slati ciljane ponude članovima?",
+      "answer": "Da. Partneri mogu kreirati ciljane ponude za članove Montenegro Select mreže, kako bi popunili mirnije termine, promovisali nove usluge ili podstakli ponovne dolaske. Uslovi ponude ostaju u vašoj nadležnosti."
+    },
+    "responsibilities": {
+      "question": "Koje su obaveze partnera?",
+      "answer": "Partneri su dužni da održavaju važeće licence i dokumentaciju, posluju bezbjedno i profesionalno, te odgovaraju na upite i rezervacije u dogovorenim rokovima. Kontinuirano ispunjavanje ovih uslova je neophodno za ostanak u mreži."
+    },
+    "termination": {
+      "question": "Da li partnerstvo može biti raskinuto?",
+      "answer": "Da. Zadržavamo pravo da obustavimo ili raskinemo saradnju ukoliko se dogovoreni standardi ne poštuju ili dođe do kršenja ugovornih obaveza."
+    },
+    "exclusivity": {
+      "question": "Da li je potrebna ekskluzivnost?",
+      "answer": "Ne. Slobodni ste da poslujete i putem drugih platformi."
+    }
+  },
   "partner": {
     "hero": {
       "preheadline": "Za biznise u Crnoj Gori",
@@ -130,6 +173,10 @@
       "microcopy": "Selektivno. Kuratirano. Premium."
     },
     "becomePartner": "Postanite partner",
+    "bottomCta": {
+      "preheadline": "Spremni ste?",
+      "heading": "Postanite partner"
+    },
     "offers": {
       "headline": "Otključajte potražnju u pravom trenutku",
       "subheadline": "Direktno komunicirajte sa našim članovima kroz ciljane ponude za sporije periode, nove sadržaje ili posebne prilike. Bilo da je riječ o ograničenoj pogodnosti ili kratkoročnom paketu, zadržavate potpunu kontrolu nad uslovima, dok pristupate publici koja aktivno traži provjerene i kvalitetne usluge."

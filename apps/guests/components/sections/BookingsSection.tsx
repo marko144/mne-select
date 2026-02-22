@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react'
+import { CalendarIcon, LockIcon } from '@mne-select/ui'
 import { useLanguage } from '../../contexts/LanguageContext'
 
 // ─── Design tokens ───────────────────────────────────────────────────────────
@@ -62,40 +63,6 @@ function usePhoneAnim(active: boolean): number {
   }, [active])
 
   return phase
-}
-
-// ─── SVG icons ───────────────────────────────────────────────────────────────
-
-function CalendarIcon() {
-  return (
-    <svg width="54" height="54" viewBox="0 0 54 54" fill="none" aria-hidden="true">
-      {/* Body */}
-      <rect x="5" y="11" width="44" height="38" rx="5" stroke={`${NAVY}40`} strokeWidth="1.6" />
-      {/* Header band */}
-      <rect x="5" y="11" width="44" height="14" rx="5" fill={`${NAVY}08`} />
-      {/* Binding posts */}
-      <line x1="18" y1="6" x2="18" y2="17" stroke={`${NAVY}55`} strokeWidth="2.5" strokeLinecap="round" />
-      <line x1="36" y1="6" x2="36" y2="17" stroke={`${NAVY}55`} strokeWidth="2.5" strokeLinecap="round" />
-      {/* Day dots row 1 */}
-      <circle cx="15" cy="32" r="1.6" fill={`${NAVY}35`} />
-      <circle cx="27" cy="32" r="1.6" fill={`${NAVY}35`} />
-      <circle cx="39" cy="32" r="1.6" fill={`${NAVY}35`} />
-      {/* Day dots row 2 */}
-      <circle cx="15" cy="42" r="1.6" fill={`${NAVY}35`} />
-      {/* Highlighted date */}
-      <rect x="22" y="37" width="10" height="10" rx="2.5" fill={GOLD} opacity="0.9" />
-      <circle cx="39" cy="42" r="1.6" fill={`${NAVY}35`} />
-    </svg>
-  )
-}
-
-function LockIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="4" y="11" width="16" height="11" rx="3" fill="currentColor" />
-      <path d="M7.5 11V8a4.5 4.5 0 019 0v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  )
 }
 
 // ─── Phone mockup ─────────────────────────────────────────────────────────────
@@ -193,13 +160,14 @@ function PhoneMockup({ phase }: { phase: number }) {
 
             {/* Content area */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10, padding: '0 18px' }}>
-              {/* Calendar icon */}
+              {/* Calendar icon — color set to navy so currentColor strokes render correctly on cream screen */}
               <div style={{
+                color: NAVY,
                 opacity: calVisible ? 1 : 0,
                 transform: calVisible ? 'translateY(0)' : 'translateY(14px)',
                 transition: `opacity 400ms ${easeOut}, transform 400ms ${easeOut}`,
               }}>
-                <CalendarIcon />
+                <CalendarIcon size={54} />
               </div>
 
               {/* Date + tour info */}
@@ -274,7 +242,7 @@ function PhoneMockup({ phase }: { phase: number }) {
 
             {/* Content area */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 12, padding: '0 18px' }}>
-              {/* Lock icon */}
+              {/* Lock icon — color: GOLD so currentColor resolves to gold */}
               <div style={{
                 color: GOLD,
                 opacity: amtVisible ? 1 : 0,

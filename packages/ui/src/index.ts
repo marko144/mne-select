@@ -32,3 +32,17 @@ export type { CookieBannerProps } from './components/CookieBanner'
 
 export { Modal } from './components/Modal'
 export type { ModalProps } from './components/Modal'
+
+export { FormField } from './components/FormField'
+export type { FormFieldProps } from './components/FormField'
+
+export { Select } from './components/Select'
+export type { SelectProps, SelectOption } from './components/Select'
+
+export { AutocompleteInput } from './components/AutocompleteInput'
+export type { AutocompleteInputProps } from './components/AutocompleteInput'
+
+export { PhoneInput, DIAL_COUNTRY_CODES } from './components/PhoneInput'
+export type { PhoneInputProps, DialCountryCode } from './components/PhoneInput'
+
+export { CalendarIcon, LockIcon } from './components/Icons'
